@@ -12,6 +12,8 @@ module.exports = function(grunt) {
                 ignores: [
                     '**/node_modules/**',
                     '**/Library/jas/**',
+                    '**/platforms/**',
+                    '**/plugins/**',
                     '**/jquery-2.0.3.js',
                     '**/requirejs-wrapper*.js',
                     '**/requirejs-setup*.js'
@@ -43,14 +45,16 @@ module.exports = function(grunt) {
         },
 
         jscs: {
-            src: ['**/*.js', '!**/whitelist.js'],
+            src: ['**/*.js'],
             options: {
                 config: '.jscsrc'
             }
         },
 
         'jsbeautifier': {
-            files: ['**/*.js', '!**/node_modules/**', '!**/components/**'],
+            files: ['**/*.js', '!**/node_modules/**', '!**/components/**',
+                '!**/platforms/**', '!**/plugins/**'
+            ],
             options: {
                 'indentSize': 4
             }
