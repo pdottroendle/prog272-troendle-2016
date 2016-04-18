@@ -6,11 +6,15 @@ module.exports = function(grunt) {
         pkg: '<json:package.json>',
 
         jshint: {
-            files: ['**/*.js'],
+            files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
 
             options: {
                 ignores: [
-                    '**/node_modules/**'
+                    '**/node_modules/**',
+                    '**/Library/jas/**',
+                    '**/jquery-2.0.3.js',
+                    '**/requirejs-wrapper*.js',
+                    '**/requirejs-setup*.js'
                 ],
                 reporter: 'checkstyle',
                 reporterOutput: 'result.xml',
@@ -30,16 +34,16 @@ module.exports = function(grunt) {
 
         clean: {
             work: {
-                src: ['**/node_modules/**']
+                src: ['**/node_modules/**', 'result.xml']
             },
 
             zip: {
-                src: ['<%= zipFile %>']
+                src: []
             }
         },
 
         jscs: {
-            src: ['**/*.js', '!spec/bitly-links.js'],
+            src: ['**/*.js', '!**/whitelist.js'],
             options: {
                 config: '.jscsrc'
             }

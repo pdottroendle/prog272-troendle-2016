@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         },
 
         jscs: {
-            src: '**/*.js',
+            src: ['**/*.js', '!spec/bitly-links.js'],
             options: {
                 config: '.jscsrc'
             }
