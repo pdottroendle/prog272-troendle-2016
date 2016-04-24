@@ -1,0 +1,8 @@
+{
+    "preset": "google",
+    "validateIndentation": 4,
+    "excludeFiles": ["**/node_modules/**", "**/components/**", '**/node_modules/**', '**/components/**',
+        '**/platforms/**', '**/plugins/**'],
+    "requireCamelCaseOrUpperCaseIdentifiers": false,
+    "maximumLineLength": 120
+}
