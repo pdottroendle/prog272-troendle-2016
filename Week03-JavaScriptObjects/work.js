@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var myObject01 = {
     firstName: 'Susi',
     lastName: 'Smooth'
