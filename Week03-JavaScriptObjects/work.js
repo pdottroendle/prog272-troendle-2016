@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 var myObject01 = {
     firstName: 'Susi',
     lastName: 'Smooth'
@@ -14,19 +15,17 @@ var myObject02 = {
 };
 
 var calculator = {
-    operator01: 6,
-    operator02: 10,
-    addMe: function() {
-        return this.operator01 + this.operator02;
+    addMe: function(operator01,operator02) {
+        return operator01 + operator02;
     },
-    subMe: function() {
-        return this.operator01 - this.operator02;
+    subMe: function(operator01,operator02) {
+        return operator01 - operator02;
     },
-    mulMe: function() {
-        return this.operator01 * this.operator02;
+    mulMe: function(operator01,operator02) {
+        return operator01 * operator02;
     },
-    divMe: function() {
-        return this.operator01 / this.operator02;
+    divMe: function(operator01,operator02) {
+        return operator01 / operator02;
     }
 };
 
@@ -48,16 +47,14 @@ console.log(myObject01.lastName);
 console.log(myObject02.fullName());
 
 layout('Calculator');
-console.log('operator01 =', calculator.operator01);
-console.log('operator02 =', calculator.operator02);
 
-sublayout('Adder');
-console.log(calculator.addMe());
-sublayout('Subtractor');
-console.log(calculator.subMe());
-sublayout('Multiplyier');
-console.log(calculator.mulMe());
-sublayout('Divider');
-console.log(calculator.divMe());
+sublayout('Adder 1 + 2');
+console.log(calculator.addMe(1,2));
+sublayout('Subtractor 3 - 4');
+console.log(calculator.subMe(3,4));
+sublayout('Multiplyier 5 * 6');
+console.log(calculator.mulMe(5,6));
+sublayout('Divider 7/8');
+console.log(calculator.divMe(7,8));
 
 layout('Thank You!');
