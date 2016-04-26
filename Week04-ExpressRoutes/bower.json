@@ -1,0 +1,24 @@
+{
+  "name": "week04-express-routes",
+  "description": "routes in express",
+  "main": "bin/www",
+  "authors": [
+    "troendle at school <pdottroendle@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "routing",
+    "express"
+  ],
+  "homepage": "https://github.com/pdottroendle/prog272-troendle-2016",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
