@@ -23,6 +23,16 @@ router.get('/Qux', function(request, response) {
   ]);
 });
 
+router.get('/add', function(request, response) {
+  console.log('add method called');
+  console.log('The parameters are:', request.query);
+  console.log('OperatorA is:', request.query.operatorA);
+  var operatorA = parseInt(request.query.operatorA);
+  var operatorB = parseInt(request.query.operatorB);
+
+  response.send({ sum: operatorA + operatorB });
+});
+
 router.get('/:id', function(request, response)  {
     response.send(request.params.id);
 });

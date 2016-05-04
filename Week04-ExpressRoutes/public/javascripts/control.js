@@ -7,6 +7,19 @@ $(document).ready(function() {
     $('#read').click(callRead);
     $('#readJson').click(callReadJson);
     $('#readQux').click(callReadQux);
+    $('#add').click(add);
+
+    function add() {
+        var operatorA = $('#operatorA').val();
+        var operatorB = $('#operatorB').val();
+        console.log('operators:' , operatorA, operatorB);
+        var requestQuery = { operatorA:  operatorA, operatorB: operatorB };
+        
+        $.getJSON('/add', requestQuery, function(sum) {
+            console.log("Sum:", sum);
+            $('#display').html('The sum is:' + sum.sum);
+        });
+    }
 
     function callRead(){
     console.log('Button clicked in prog 272');
