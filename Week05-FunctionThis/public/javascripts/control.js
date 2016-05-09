@@ -2,7 +2,7 @@ function getNine() {
     return 9;
 }
 
-function getThis() {
+function getThisStrict() { 'use strict'
     return this;
 }
 
@@ -10,7 +10,7 @@ var getThisAnonymous = function(){
   return this;
 };
 
-var myObject = {  'use strict'
+var myObject = {
    getThis: function() {
        return this;
    }

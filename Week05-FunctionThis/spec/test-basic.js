@@ -6,11 +6,11 @@ describe('Elvenware Simple Plain Suite', function () {
 
     'use strict';
 
-   it('expects true to be true', function () {
+   fit('expects true to be true', function () {
         expect(true).toBe(true);
     });
 
-   it('expects getNine to return 9', function () {
+   fit('expects getNine to return 9', function () {
         var result = getNine();
         expect(result).toBe(9);
     });
@@ -20,12 +20,12 @@ describe('Elvenware Simple Plain Suite', function () {
         expect(result).toBe(window);
     });
 
-   it('expects a simple anonymous function to set this to the window object', function() {
+   fit('expects a simple anonymous function to set this to the window object', function() {
         var result = getThisAnonymous();
         expect(result).toBe(window);
     });
 
-   it('expects a method of myObject called getThis to show this is myObject', function() {
+   fit('expects a method of myObject called getThis to show this is myObject', function() {
         var result = myObject.getThis();
         expect(result).toBe(myObject);
     });

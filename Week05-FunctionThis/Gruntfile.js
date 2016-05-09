@@ -13,8 +13,8 @@ module.exports = function(grunt) {
                     '**/node_modules/**', '**/components/**'
                 ],
                 reporter: require('jshint-stylish'),
-                strict: false,
-                validthis: true,
+                strict: false,   // WE CHANGED THIS LINE TO FALSE
+                validthis: true, // WE NEED THIS TOO
                 jasmine: true
             }
         },
