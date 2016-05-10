@@ -10,13 +10,33 @@ router.get('/', function(req, res, next) { 'use strict';
 router.get('/renewables', function(request, response) {
   console.log('Renewables called');
 
-  fs.readFile('data/Renewable.json', 'utf8', function(err, data)
-  {
-    if (err) throw err;
-    console.log(data);
-    response.send({result: 'Success', renewables: data});
+  fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    if (err) {
+      // response.send(err, 404);
+      response.status(404).send(err);
+    } else {
+      var json = JSON.parse(data);
+      console.log(json);
+      response.send({result: 'Success', renewables: json});
+    }
   });
 
 });
+/*
+router.get('/renewables/:id', function(request, response) {
+  console.log('Renewables with id called');
 
+  fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
+    if (err)
+    // response.send(err, 404);
+      response.status(404).send(err);
+  } else {
+    var json = JSON.parse(data);
+    console.log(json);
+    response.send({result: 'Success', renewables: json});
+  }
+
+});
+*/
 module.exports = router;
+
