@@ -1,5 +1,5 @@
 {
-  "name": "Week05-ExpressRoutesSolar",
+  "name": "week05-expressroutessolar",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -33,5 +33,17 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "~0.0.23",
     "supertest": "^1.2.0"
-  }
+  },
+  "description": "Prog 272 in spring 2016 at Bellevue College",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "Week05-ExpressRoutesSolar"
+  },
+  "keywords": [
+    "express",
+    "routes"
+  ],
+  "author": "troendle",
+  "license": "MIT"
 }
