@@ -26,3 +26,4 @@ describe('Elvenware Energy Utils Suite', function () {
         }
     });
 });
+
