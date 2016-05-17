@@ -71,7 +71,7 @@ describe('Elvenware Spec Routes Suite', function () {
                 // console.log('expect called');
                 expect(response.body.result).toBe('Success');
                 //console.log(response.body.renewables);
-                var renewable = response.body.renewable;
+                var renewable = response.body.renewables;
                 expect(renewable.Year).toBe('2016');
             })
             .end(function (err, res) {
