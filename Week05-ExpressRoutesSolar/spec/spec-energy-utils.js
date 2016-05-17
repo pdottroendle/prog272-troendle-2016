@@ -22,7 +22,7 @@ describe('Elvenware Energy Utils Suite', function () {
         for (var i = 0; i < sortedArray.length - 1; i++) {
             console.log(sortedArray[i]);
 
-            //expect(sortedArray[i][1]).toBeLessThan(sortedArray[i + 1][1]);
+            expect(sortedArray[i][1]).toBeLessThan(sortedArray[i + 1][1]);
         }
     });
 });

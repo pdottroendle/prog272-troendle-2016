@@ -2,7 +2,7 @@
  * Created by bcuser on 5/11/16.
  */
 
-//var module_exports =
+// var module_exports =    see last line
 var renewables =
 
     [
