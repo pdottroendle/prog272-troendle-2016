@@ -13,7 +13,7 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery', 'work', 'about'], function ($, work, about) {
+requirejs(['jquery'], function ($) {
 
     requirejs(['bootstrap', 'control'], function (bootstrap, control) {
         control.init();
