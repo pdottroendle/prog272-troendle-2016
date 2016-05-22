@@ -1,9 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1= title
+    p Welcome to #{title}
 
-  button#getRenewable Get Renewable
+button#workButton.btn.btn-primary Work
+button#aboutButton.btn.btn-success About
 
-  pre#debug
+#elf-view
+
+    button#getRenewable Get Renewable  All Renewables
+    input#renewableByIndex(type='number', value='2')
+    button#getRenewableByIndex Get Renewable by Index
+    input#renewableByYear(type='number', value='2010')
+    button#getRenewableByYear Get Renewable by Year
+
+    pre#debug

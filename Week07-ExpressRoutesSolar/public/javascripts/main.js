@@ -1,7 +1,3 @@
-/**
- * Created by bcuser on 5/16/16.
- */
-
 requirejs.config({
     baseUrl: '.',
     paths: {
@@ -13,7 +9,7 @@ requirejs.config({
 
 requirejs(['jquery'], function($) {
 
-    requirejs(['bootstrap', "control"], function(bootstrap, control, work, about, funcObj) {
+    requirejs(['bootstrap', 'control'], function(bootstrap, control) {
         control.init();
     });
 });

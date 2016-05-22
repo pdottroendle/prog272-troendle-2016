@@ -10,9 +10,9 @@ $(document).ready(function () {
         console.log('getRenewable called');
 
         $.getJSON('/renewables', function (response) {
-            console.log(response);
-            $('#debug').html(JSON.stringify(response, null, 4));
-        })
+                console.log(response);
+                $('#debug').html(JSON.stringify(response, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
@@ -32,11 +32,11 @@ $(document).ready(function () {
         var userInput = $('# renewableByIndex').val();
 
 
-            $.getJSON('/renewableByIndex/'+ userInput, function (response) {
-            console.log(response);
+        $.getJSON('/renewableByIndex/' + userInput, function (response) {
+                console.log(response);
 
-            $('#debug').html(JSON.stringify(response, null, 4));
-        })
+                $('#debug').html(JSON.stringify(response, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
@@ -56,11 +56,11 @@ $(document).ready(function () {
         var userInput = $('# renewableByYear').val();
 
 
-        $.getJSON('/renewableByYear/'+ userInput, function (response) {
-            console.log(response);
+        $.getJSON('/renewableByYear/' + userInput, function (response) {
+                console.log(response);
 
-            $('#debug').html(JSON.stringify(response, null, 4));
-        })
+                $('#debug').html(JSON.stringify(response, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
@@ -78,28 +78,28 @@ $(document).ready(function () {
 
 
 define(['jquery'], function($) {
-        //Do setup work here
+    //Do setup work here
 
-        function showBar() {
-            //console.log('Show Bar Clicks called now');
-            $('#display2').html('bar');
+    function showBar() {
+        //console.log('Show Bar Clicks called now');
+        $('#display2').html('bar');
+    }
+
+    var control = {
+        color: "black",
+        size: "unisize",
+        setup: function() {
+            $(document).on('click', '#showClick', showBar);
+            $('#display2').html(control.color + ' - ' + control.size);
+        },
+        init: function() {
+            //console.log(this.color);
+            that = this;
+            $('#aboutButton').click(about.init);
+            $('#workButton').click(work.init);
+            work.init();
         }
+    };
 
-        var control = {
-            color: "black",
-            size: "unisize",
-            setup: function() {
-                $(document).on('click', '#showClick', showBar);
-                $('#display2').html(control.color + ' - ' + control.size);
-            },
-            init: function() {
-                //console.log(this.color);
-                that = this;
-                $('#aboutButton').click(about.init);
-                $('#workButton').click(work.init);
-                $('#elf-view').load('/main', this.setup);
-            }
-        };
-
-        return control;
-    });
+    return control;
+});
