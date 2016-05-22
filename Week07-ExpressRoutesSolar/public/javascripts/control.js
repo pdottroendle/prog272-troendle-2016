@@ -1,83 +1,4 @@
-$(document).ready(function () {
-    'use strict';
-
-    $('#getRenewable').click(getRenewable);
-    $('#getRenewablebyIndex').click(getRenewableByIndex);
-    $('#getRenewablebyYear').click(getRenewableByYear);
-
-
-    function getRenewable() {
-        console.log('getRenewable called');
-
-        $.getJSON('/renewables', function (response) {
-                console.log(response);
-                $('#debug').html(JSON.stringify(response, null, 4));
-            })
-            .done(function () {
-                console.log('second success');
-            })
-            .fail(function (a, b, c) {
-                console.log('Error', a, b, c);
-                $('#debug').html('Error occured: ', a.status);
-            })
-            .always(function () {
-                console.log('complete');
-
-            });
-    }
-
-    function getRenewableByIndex() {
-        console.log('getRenewableByIndex called');
-
-        var userInput = $('# renewableByIndex').val();
-
-
-        $.getJSON('/renewableByIndex/' + userInput, function (response) {
-                console.log(response);
-
-                $('#debug').html(JSON.stringify(response, null, 4));
-            })
-            .done(function () {
-                console.log('second success');
-            })
-            .fail(function (a, b, c) {
-                console.log('Error', a, b, c);
-                $('#debug').html('Error occured: ', a.status);
-            })
-            .always(function () {
-                console.log('complete');
-
-            });
-    }
-
-    function getRenewableByYear() {
-        console.log('getRenewableByYear called');
-
-        var userInput = $('# renewableByYear').val();
-
-
-        $.getJSON('/renewableByYear/' + userInput, function (response) {
-                console.log(response);
-
-                $('#debug').html(JSON.stringify(response, null, 4));
-            })
-            .done(function () {
-                console.log('second success');
-            })
-            .fail(function (a, b, c) {
-                console.log('Error', a, b, c);
-                $('#debug').html('Error occured: ', a.status);
-            })
-            .always(function () {
-                console.log('complete');
-
-            });
-    }
-
-});
-
-
-define(['jquery'], function($) {
+define(['jquery', 'work', 'about'], function ($, work, about) {
     //Do setup work here
 
     function showBar() {
@@ -85,21 +6,103 @@ define(['jquery'], function($) {
         $('#display2').html('bar');
     }
 
-    var control = {
+    var control;
+    control = {
         color: "black",
         size: "unisize",
-        setup: function() {
+        setup: function () {
             $(document).on('click', '#showClick', showBar);
             $('#display2').html(control.color + ' - ' + control.size);
         },
-        init: function() {
+        init: function () {
             //console.log(this.color);
-            that = this;
             $('#aboutButton').click(about.init);
             $('#workButton').click(work.init);
             work.init();
+            //$('elf-view').load('/main', this.setup);
         }
     };
 
     return control;
+});
+
+
+
+
+$(document).ready(function () {
+    'use strict';
+
+$('#getRenewable').click(getRenewable);
+$('#getRenewablebyIndex').click(getRenewablebyIndex);
+$('#getRenewablebyYear').click(getRenewableByYear);
+
+
+function getRenewable() {
+    console.log('getRenewable called');
+
+    $.getJSON('/renewables', function (response) {
+            console.log(response);
+            $('#debug').html(JSON.stringify(response, null, 4));
+        })
+        .done(function () {
+            console.log('second success');
+        })
+        .fail(function (a, b, c) {
+            console.log('Error', a, b, c);
+            $('#debug').html('Error occured: ', a.status);
+        })
+        .always(function () {
+            console.log('complete');
+
+        });
+}
+
+function getRenewablebyIndex() {
+    console.log('getRenewablesByIndex called');
+
+    var userInput = $('#renewableByIndex').val();
+
+
+    $.getJSON('/renewablesByIndex/' + userInput, function (response) {
+            console.log(response);
+
+            $('#debug').html(JSON.stringify(response, null, 4));
+        })
+        .done(function () {
+            console.log('second success');
+        })
+        .fail(function (a, b, c) {
+            console.log('Error', a, b, c);
+            $('#debug').html('Error occured: ', a.status);
+        })
+        .always(function () {
+            console.log('complete');
+
+        });
+}
+
+function getRenewableByYear() {
+    console.log('getRenewableByYear called');
+
+    var userInput = $('#renewableByYear').val();
+
+
+    $.getJSON('/renewablesByYear/' + userInput, function (response) {
+            console.log(response);
+
+            $('#debug').html(JSON.stringify(response, null, 4));
+        })
+        .done(function () {
+            console.log('second success');
+        })
+        .fail(function (a, b, c) {
+            console.log('Error', a, b, c);
+            $('#debug').html('Error occured: ', a.status);
+        })
+        .always(function () {
+            console.log('complete');
+
+        });
+}
+
 });

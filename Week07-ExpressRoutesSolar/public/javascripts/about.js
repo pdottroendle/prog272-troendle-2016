@@ -8,10 +8,10 @@ define(function () {
     var about = {
         color: "Green",
         size: "LittleGreen",
-        init: function() {
+        init: function () {
             console.log(about.color);
             //var that = this;
-            $('#elf-view').load('/about', function() {
+            $('#elf-view').load('/about', function () {
                 $('#display').html(about.color + ' ' + about.size);
             });
         }

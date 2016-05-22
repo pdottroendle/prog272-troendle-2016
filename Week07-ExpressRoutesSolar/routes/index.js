@@ -59,7 +59,7 @@ router.get('/renewablesByYear/:id', function (request, response) {
             var json = JSON.parse(data);
 
             for (var i = 0; i < json.length; i++) {
-                if (request.params.id === json[i].Year) {
+                if (json[i].Year === request.params.id ) {
                     console.log(json[i].Year);
                     response.send({
                         result: 'Success',
@@ -103,4 +103,3 @@ router.get('/:id', function(request, response) {
 });
 
 module.exports = router;
-
