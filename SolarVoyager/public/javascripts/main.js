@@ -9,7 +9,9 @@ requirejs.config({
         bootstrap: 'components/bootstrap/dist/js/bootstrap',
         control: 'javascripts/control',
         work: 'javascripts/work',
-        about: 'javascripts/about'
+        about: 'javascripts/about',
+        renewables: 'javascripts/renewables',
+        renewablesByIndex: 'javascripts/renewables-index'
     }
 });
 
