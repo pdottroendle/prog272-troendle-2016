@@ -1,5 +1,5 @@
-define(['jquery', 'work', 'about', 'renewables', 'renewablesByIndex'],
-    function ($, work, about, renewables, renewablesByIndex) {
+define(['jquery', 'work', 'about', 'renewables', 'renewablesByIndex', 'renewablesByYear'],
+    function ($, work, about, renewables, renewablesByIndex, renewablesByYear) {
     //Done setup work here
 
     function showBar() {
@@ -21,6 +21,8 @@ define(['jquery', 'work', 'about', 'renewables', 'renewablesByIndex'],
             $('#workButton').click(work.init);
             $('#renewablesButton').click(renewables.init);
             $('#renewablesByIndexButton').click(renewablesByIndex.init);
+            $('#renewablesByYearButton').click(renewablesByYear.init);
+
             work.init();
             //$('elf-view').load('/main', this.setup);
         }
@@ -29,8 +31,8 @@ define(['jquery', 'work', 'about', 'renewables', 'renewablesByIndex'],
     return control;
 });
 
-//$(document).ready(function () {
-//    'use strict';
+/*  $(document).ready(function () {
+    'use strict';
 
 $('#getRenewable').click(getRenewable);
 $('#getByIndex').click(getRenewableByIndex);
@@ -93,4 +95,6 @@ function getRenewableByYear() {
             console.log('complete');
         });
 }
-//});
+});
+
+*/

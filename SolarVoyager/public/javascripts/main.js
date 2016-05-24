@@ -11,7 +11,8 @@ requirejs.config({
         work: 'javascripts/work',
         about: 'javascripts/about',
         renewables: 'javascripts/renewables',
-        renewablesByIndex: 'javascripts/renewables-index'
+        renewablesByIndex: 'javascripts/renewables-index',
+        renewablesByYear: 'javascripts/renewables-year'
     }
 });
 
