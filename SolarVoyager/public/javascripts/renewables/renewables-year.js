@@ -2,7 +2,7 @@ define(function () {
 
 
     function getRenewableByYear() {
-        var yearInput = $('#inputByYear').val();
+        var yearInput = $('#renewableByYear').val();
         console.log('getRenewableByYear called');
 
         $.getJSON('/renewablesByYear/' + yearInput, function (response) {
@@ -29,7 +29,7 @@ define(function () {
                 $('#elf-view').load('/renewables/renewables-by-year-page', function () {  //r
                     $('#display').html(renewablesByYear.color);
                     $('#display2').html(renewablesByYear.size);
-                    $('#renewablesByYear').change(function () {
+                    $('#renewableByYear').change(function () {
                         getRenewableByYear();
                     });
                     getRenewableByYear();

@@ -9,7 +9,7 @@ $("#renewableByIndex").change(function () {
 define(function () {
 
     function getRenewableByIndex() {
-        var indexInput = $('#inputByIndex').val();
+        var indexInput = $('#renewableByIndex').val();
         console.log('getRenewableByIndex called', indexInput);
 
         $.getJSON('/renewablesByIndex/' + indexInput, function (response) {
