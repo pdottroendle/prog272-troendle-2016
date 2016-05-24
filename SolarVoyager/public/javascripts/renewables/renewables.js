@@ -23,7 +23,7 @@ define(function () {
         size: "big",
         init: function () {
             console.log(renewables.color);
-            $('#elf-view').load('/renewables-page', function () {  //r
+            $('#elf-view').load('/renewables/renewables-page', function () {  //r
                 $('#display').html(renewables.color);
                 $('#display2').html(renewables.size);
                 getRenewable();

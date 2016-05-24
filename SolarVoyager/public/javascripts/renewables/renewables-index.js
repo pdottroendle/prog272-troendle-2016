@@ -34,7 +34,7 @@ define(function () {
         size: "big",
         init: function () {
             console.log(renewablesByIndex.color);
-            $('#elf-view').load('/renewables-by-index-page', function () {  //r
+            $('#elf-view').load('/renewables/renewables-by-index-page', function () {  //r
                 $('#display').html(renewablesByIndex.color);
                 $('#display2').html(renewablesByIndex.size);
                 $('#renewableByIndex').change(function () {

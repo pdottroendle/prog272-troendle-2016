@@ -26,7 +26,7 @@ define(function () {
             size: "big",
             init: function () {
                 console.log(renewablesByYear.color);
-                $('#elf-view').load('/renewables-by-year-page', function () {  //r
+                $('#elf-view').load('/renewables/renewables-by-year-page', function () {  //r
                     $('#display').html(renewablesByYear.color);
                     $('#display2').html(renewablesByYear.size);
                     $('#renewablesByYear').change(function () {

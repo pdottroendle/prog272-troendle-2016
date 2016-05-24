@@ -10,13 +10,13 @@ requirejs.config({
         control: 'javascripts/control',
         work: 'javascripts/work',
         about: 'javascripts/about',
-        renewables: 'javascripts/renewables',
-        renewablesByIndex: 'javascripts/renewables-index',
-        renewablesByYear: 'javascripts/renewables-year'
+        renewables: 'javascripts/renewables/renewables',
+        renewablesByIndex: 'javascripts/renewables/renewables-index',
+        renewablesByYear: 'javascripts/renewables/renewables-year'
     }
 });
 
-requirejs(['jquery', 'work', 'about'], function ($, work, about) {
+requirejs(['jquery'], function ($) {
 
     requirejs(['bootstrap', 'control'], function (bootstrap, control) {
         control.init();
