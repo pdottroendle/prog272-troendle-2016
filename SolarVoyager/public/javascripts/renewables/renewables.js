@@ -1,9 +1,17 @@
 define(function () {
 
+    var index = 0;
+
     function getRenewable() {
         console.log('getRenewable called');
         $.getJSON('/renewables', function (response) {
             console.log(response);
+
+            // renewables.renewablesList = response.renewables;
+            // console.log(response.renewables);
+            // showRenewable(renewables.renewablesList[index]);
+            // console.log(renewables.renewablesList[index]);
+            
             $('#debug').html(JSON.stringify(response, null, 4));
         })
             .done(function () {
@@ -18,17 +26,22 @@ define(function () {
             });
     }
 
-    var renewables = {
+    //function getSimpleKeys(renewable) {  xxxxxxxxxxxxxxxxxxxx
+
+        var renewables = {
         color: "red",
         size: "big",
         init: function () {
             console.log(renewables.color);
-            $('#elf-view').load('/renewables/renewables-page', function () {  //r
-                $('#display').html(renewables.color);
+            $('#elf-view').load('/renewables/renewables-page', function () {                  $('#display').html(renewables.color);
                 $('#display2').html(renewables.size);
+                $('#renewable').change(function () {
+                    getRenewable();
+                });
                 getRenewable();
             });
         }
+        
     };
     return renewables;
 });

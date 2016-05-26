@@ -17,11 +17,16 @@ define(['jquery', 'work', 'about', 'renewables', 'renewablesByIndex', 'renewable
         },
         init: function () {
             //console.log(this.color);
+//            $('#homeMenu').click(home.init);
             $('#aboutButton').click(about.init);
             $('#workButton').click(work.init);
             $('#renewablesButton').click(renewables.init);
             $('#renewablesByIndexButton').click(renewablesByIndex.init);
             $('#renewablesByYearButton').click(renewablesByYear.init);
+            //$('#plusButton').click(plusButton.init);
+            //$('#minusButton').click(minusButton.init);
+            //$('#highTechEnergyOverviewMenu').click(energyOverview.init);
+            //$('#highTechEnergyTypesMenu').click(energyTypes.init);
 
             work.init();
             //$('elf-view').load('/main', this.setup);
