@@ -34,4 +34,3 @@ require.config({
     deps: loadTestsIntoArray(),
     callback: window.__karma__.start
 });
-

@@ -12,7 +12,7 @@ function objectToArray(obj) {
         objectAsArray.push([key, obj[key]]);
     }
 
-    objectAsArray.sort(function (a, b) {
+    objectAsArray.sort(function(a, b) {
         return a[1] > b[1];
     });
     return objectAsArray;

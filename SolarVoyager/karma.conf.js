@@ -12,13 +12,12 @@ module.exports = function(config) {
         files: [
             'public/components/jquery/dist/jquery.min.js',
             //'public/components/requirejs/require.js',
-            'node_modules/jasmine-jquery/lib/*.js',
-            {
-                pattern : 'spec/test-*.js',
-                included : false
+            'node_modules/jasmine-jquery/lib/*.js', {
+                pattern: 'spec/test-*.js',
+                included: false
             }, {
-                pattern : 'public/javascripts/**/*.js',
-                included : false
+                pattern: 'public/javascripts/**/*.js',
+                included: false
             },
             'spec/main-test.js',
             '*.html'
@@ -29,11 +28,15 @@ module.exports = function(config) {
 
         reporters: ['spec'],
 
-        specReporter: { suppressSkipped: true },
+        specReporter: {
+            suppressSkipped: true
+        },
 
         // web server port
         port: 9876,
-        preprocessors: { '**/*.html': [] },
+        preprocessors: {
+            '**/*.html': []
+        },
 
         // enable / disable colors in the output (reporters and logs)
         colors: true,

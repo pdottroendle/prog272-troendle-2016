@@ -8,11 +8,13 @@ requirejs.config({
         jquery: 'components/jquery/dist/jquery',
         bootstrap: 'components/bootstrap/dist/js/bootstrap',
         control: 'javascripts/control',
-        work: 'javascripts/work',
+        home: 'javascripts/home',
         about: 'javascripts/about',
         renewables: 'javascripts/renewables/renewables',
         renewablesByIndex: 'javascripts/renewables/renewables-index',
-        renewablesByYear: 'javascripts/renewables/renewables-year'
+        renewablesByYear: 'javascripts/renewables/renewables-year',
+        energyOverview: 'javascripts/energy-utils/energy-utils-overview',
+        energyTypes: 'javascripts/energy-utils/energy-utils-types'
     }
 });
 
