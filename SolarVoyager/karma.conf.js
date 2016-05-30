@@ -55,12 +55,7 @@ module.exports = function(config) {
         captureTimeout: 20000,
 
         // Set to false to watch files for changes
-        singleRun: false,
-
-        plugins: ['karma-jasmine',
-            'karma-spec-reporter',
-            'karma-phantomjs-launcher'
-        ]
+        singleRun: false
 
     });
 };
