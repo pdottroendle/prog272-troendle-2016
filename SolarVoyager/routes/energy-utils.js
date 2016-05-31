@@ -1,5 +1,4 @@
-/** Created by Peter-Paul Troendle 5/11/2016    .. */
-
+/** Created by Peter Troendle 5/11/2016    .. */
 
 function objectToArray(obj) {
     'use strict';

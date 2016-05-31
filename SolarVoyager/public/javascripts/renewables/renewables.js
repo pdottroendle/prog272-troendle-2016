@@ -1,10 +1,10 @@
-define(function () {
-
+define(function() {
+    'use strict';
     var index = 0;
 
     function getRenewable() {
         console.log('getRenewable called');
-        $.getJSON('/renewables', function (response) {
+        $.getJSON('/renewables', function(response) {
                 console.log(response);
 
                 // renewables.renewablesList = response.renewables;
@@ -14,14 +14,14 @@ define(function () {
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
-            .done(function () {
+            .done(function() {
                 console.log('second success');
             })
-            .fail(function (a, b, c) {
+            .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .always(function () {
+            .always(function() {
                 console.log('complete');
             });
     }
@@ -29,14 +29,14 @@ define(function () {
     //function getSimpleKeys(renewable) {  xxxxxxxxxxxxxxxxxxxx
 
     var renewables = {
-        color: "red",
-        size: "big",
-        init: function () {
+        color: 'red',
+        size: 'big',
+        init: function() {
             console.log(renewables.color);
-            $('#elf-view').load('/renewables/renewables-page', function () {
+            $('#elf-view').load('/renewables/renewables-page', function() {
                 $('#display').html(renewables.color);
                 $('#display2').html(renewables.size);
-                $('#renewable').change(function () {
+                $('#renewable').change(function() {
                     getRenewable();
                 });
                 getRenewable();

@@ -4,18 +4,18 @@ var fs = require('fs');
 var energyUtils = require('../routes/energy-utils.js');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {
         title: 'Week07-ExpressRoutesSolar Deeper Troendle'
     });
 });
 
-router.get('/renewables', function (request, response) {
+router.get('/renewables', function(request, response) {
     'use strict';
     console.log('Renewables called');
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -31,11 +31,11 @@ router.get('/renewables', function (request, response) {
 
 });
 
-router.get('/renewablesByIndex/:id', function (request, response) {
+router.get('/renewablesByIndex/:id', function(request, response) {
     'use strict';
     console.log('Renewables By Index called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -50,11 +50,11 @@ router.get('/renewablesByIndex/:id', function (request, response) {
     });
 });
 
-router.get('/renewablesByYear/:id', function (request, response) {
+router.get('/renewablesByYear/:id', function(request, response) {
     'use strict';
     console.log('Renewables By Year called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -78,15 +78,13 @@ router.get('/renewablesByYear/:id', function (request, response) {
             });
         }
     });
-
 });
 
-router.get('/renewablesByIndexSorted/:id', function (request, response) {
-
+router.get('/renewablesByIndexSorted/:id', function(request, response) {
     'use strict';
     console.log('Renewables By Index Sorted called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -95,7 +93,7 @@ router.get('/renewablesByIndexSorted/:id', function (request, response) {
             var json1 = json2[parseInt(request.params.id)];
             var json = energyUtils.objectToArray(json1);
             console.log(json);
-            console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
             response.send({
                 result: 'Success', //return the array built in the call to objectToArray
                 renewables: json2[parseInt(request.params.id)]
@@ -104,13 +102,15 @@ router.get('/renewablesByIndexSorted/:id', function (request, response) {
     });
 });
 
-router.get('/renewables/:id', function (request, response) {
+router.get('/renewables/:id', function(request, response) {
+    'use strict';
     response.render('renewables/' + request.params.id, {
         title: 'ElfComponent'
     });
 });
 
-router.get('/:id', function (request, response) {
+router.get('/:id', function(request, response) {
+    'use strict';
     response.render(request.params.id, {
         title: 'ElfComponent'
     });
