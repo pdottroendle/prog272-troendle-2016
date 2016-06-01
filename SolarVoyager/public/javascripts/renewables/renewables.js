@@ -33,6 +33,9 @@ define(function() {
             $('#elf-view').load('/renewables/renewables-page', function() {
                 $('#display').html(renewables.color);
                 $('#display2').html(renewables.size);
+                $('#plusButton').click({ value : 1}, indexButtonChange);
+                $('#minusButton').click({ value : -1}, indexButtonChange);
+                         
                 $('#renewable').change(function() {
                     getRenewable();
                 });
@@ -52,8 +55,8 @@ index = text
 .val()
 
 
-
-function getSimpleKeys(renewable({
+// copy over to others
+function getSimpleKeys(renewable){
     'use strict';
     return{
         year: renewable['Year'],

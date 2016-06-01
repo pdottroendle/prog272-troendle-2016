@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var hightTechEnergy = require('./routes/high-tech-energy');  // week09
+var renewables = require('./routes/renewables');  // week09
 var users = require('./routes/users');
 
 var app = express();
@@ -24,6 +26,8 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/high-tech-energy/', hightTechEnergy);  // week09
+app.use('/renewables/', renewables);  // week09
 app.use('/', routes);
 app.use('/users', users);
 
