@@ -7,7 +7,7 @@ var energyUtils = require('../routes/energy-utils.js');
 router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {
-        title: 'Week07-ExpressRoutesSolar Deeper Troendle'
+        title: 'Week08-ExpressRoutesSolar Midterm Troendle'
     });
 });
 
