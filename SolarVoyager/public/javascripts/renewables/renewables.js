@@ -6,6 +6,7 @@ define(function() {
         console.log('getRenewable called');
         $.getJSON('/renewables', function(response) {
                 console.log(response);
+
                 //renewables.renewablesList = response.renewables; //< ==== HERE
                 //showRenewable(renewables.renewablesList[index]); //< ==== HERE
                 $('#debug').html(JSON.stringify(response, null, 4));
@@ -45,6 +46,13 @@ define(function() {
 
 
 /*
+ function indexchange(test){
+if (test > 12) && (test >= 0)
+index = text
+.val()
+
+
+
 function getSimpleKeys(renewable({
     'use strict';
     return{
