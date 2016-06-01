@@ -3,8 +3,8 @@
  */
 
 define(['home'], function(home) {
+    'use strict';
     describe('Elvenware Simple Plain Suite', function() {
-
         'use strict';
 
         it('expects true to be true', function() {
