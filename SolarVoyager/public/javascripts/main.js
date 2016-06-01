@@ -13,8 +13,9 @@ requirejs.config({
         renewables: 'javascripts/renewables/renewables',
         renewablesByIndex: 'javascripts/renewables/renewables-index',
         renewablesByYear: 'javascripts/renewables/renewables-year',
-        energyOverview: 'javascripts/energy-utils/energy-utils-overview',
-        energyTypes: 'javascripts/energy-utils/energy-utils-types'
+        energyOverview: 'javascripts/high-tech-energy/energy-overview',
+        energyTypes: 'javascripts/high-tech-energy/energy-types',
+        //msnTypes: 'javascripts/high-tech-energy/msn-types'
     }
 });
 

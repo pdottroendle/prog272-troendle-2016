@@ -3,8 +3,10 @@
  */
 
 define(['home'], function(home) {
+
     'use strict';
-    describe('Elvenware Simple Plain Suite', function() {
+
+    describe('Home Page Suite', function() {
 
         it('expects true to be true', function() {
             expect(true).toBe(true);
@@ -14,5 +16,10 @@ define(['home'], function(home) {
             expect(home.color).toBe('red');
         });
 
+        it('expects home.size to be big', function() {
+            expect(home.size).toBe('big');
+        });
+
     });
+
 });

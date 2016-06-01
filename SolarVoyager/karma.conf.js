@@ -16,11 +16,14 @@ module.exports = function(config) {
                 pattern: 'spec/test-*.js',
                 included: false
             }, {
+                pattern: 'spec/data/client-renewables.js',
+                included: false
+            }, {
                 pattern: 'public/javascripts/**/*.js',
                 included: false
             },
-            'spec/main-test.js' //,
-            // '*.html'
+            'spec/main-test.js',
+            '*.html'
         ],
 
         // list of files to exclude

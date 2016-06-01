@@ -20,6 +20,7 @@ define(['jquery', 'home', 'about', 'renewables', 'renewablesByIndex',
             },
             init: function() {
                 //console.log(this.color);
+                $('#aboutButton').click(about.init);
                 $('#homeButton').click(home.init);
                 $('#renewablesButton').click(renewables.init);
                 $('#renewablesByIndexButton').click(renewablesByIndex.init);
@@ -28,7 +29,7 @@ define(['jquery', 'home', 'about', 'renewables', 'renewablesByIndex',
                 $('#highTechEnergyTypesButton').click(energyTypes.init);
 
                 home.init();
-                //$('elf-view').load('/main', this.setup);
+                $('elf-view').load('/main', this.setup);
             }
         };
 
