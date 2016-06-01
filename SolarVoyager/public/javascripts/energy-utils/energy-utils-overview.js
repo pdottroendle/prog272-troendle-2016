@@ -29,8 +29,6 @@ define(function() {
             });
     }
 
-    //function getSimpleKeys(renewable) {  xxxxxxxxxxxxxxxxxxxx
-
     var renewables = {
         color: 'red',
         size: 'big',

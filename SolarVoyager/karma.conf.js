@@ -19,8 +19,8 @@ module.exports = function(config) {
                 pattern: 'public/javascripts/**/*.js',
                 included: false
             },
-            'spec/main-test.js',
-            '*.html'
+            'spec/main-test.js' //,
+            // '*.html'
         ],
 
         // list of files to exclude
@@ -34,6 +34,7 @@ module.exports = function(config) {
 
         // web server port
         port: 9876,
+
         preprocessors: {
             '**/*.html': []
         },
@@ -56,6 +57,5 @@ module.exports = function(config) {
 
         // Set to false to watch files for changes
         singleRun: false
-
     });
 };

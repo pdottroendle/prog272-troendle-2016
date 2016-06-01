@@ -1,7 +1,6 @@
 /**
  * Created by bcuser on 5/21/16.
  */
-
 define(function() {
     'use strict';
     var home = {

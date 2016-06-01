@@ -7,11 +7,6 @@ define(function() {
         $.getJSON('/renewables', function(response) {
                 console.log(response);
 
-                // renewables.renewablesList = response.renewables;
-                // console.log(response.renewables);
-                // showRenewable(renewables.renewablesList[index]);
-                // console.log(renewables.renewablesList[index]);
-
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
             .done(function() {
@@ -25,8 +20,6 @@ define(function() {
                 console.log('complete');
             });
     }
-
-    //function getSimpleKeys(renewable) {  xxxxxxxxxxxxxxxxxxxx
 
     var renewables = {
         color: 'red',
