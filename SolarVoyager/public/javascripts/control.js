@@ -25,6 +25,13 @@ define(['jquery','home','about','renewables','renewablesByIndex','renewablesByYe
                 $('#renewablesByYearMenu').click(renewablesByYear.init);
                 $('#highTechEnergyOverviewMenu').click(energyOverview.init);
                 $('#highTechEnergyTypesMenu').click(energyTypes.init);
+                $('#aboutButton').click(about.init);
+                $('#homeButton').click(home.init);
+                $('#renewablesButton').click(renewables.init);
+                $('#renewablesByIndexButton').click(renewablesByIndex.init);
+                $('#renewablesByYearButton').click(renewablesByYear.init);
+                $('#highTechEnergyOverviewButton').click(energyOverview.init);
+                $('#highTechEnergyTypesButton').click(energyTypes.init);
 
                 home.init();
                 //$('elf-view').load('/main', this.setup);
