@@ -29,7 +29,6 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 - [Week08-ExpressRoutesSolar Midterm][express-start-test4]
  [express-start-test4]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Midterm2016.html
 
-
 ## Week 09 Clean Solar
 
 - [Week08-ExpressRoutesSolar Refactor][express-start-test5]
@@ -41,3 +40,9 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 
  ~/Git/JsObjects/Utilities/Templates/UnitTest/SolarVoyager
   www.Github.com/charliecalvert/JsObjects/tree/master/
+
+  1.  #elf-view id <-- init method  in renewables    <--  control.js Button clicked causes init
+  2.  loads jade /HTML by ID
+  3.  change handler
+  4.  get RenewableIndex
+  5.  calls getJSON

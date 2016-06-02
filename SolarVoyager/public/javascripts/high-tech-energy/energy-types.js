@@ -35,7 +35,7 @@ define(function() {
         getRenewableByIndex();
     }
 
-    var renewablesByIndex = {
+    var energyTypes = {
         color: 'red',
         size: 'big',
         init: function() {
@@ -58,5 +58,5 @@ define(function() {
             });
         }
     };
-    return renewablesByIndex;
+    return energyTypes;
 });
