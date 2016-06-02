@@ -6,7 +6,7 @@ define(function() {
 
         console.log('getRenewableByYear called');
 
-        $.getJSON('/renewablesByYear/' + yearInput, function(response) {
+        $.getJSON('/renewables/byYear/' + yearInput, function(response) {
                 console.log(response);
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
@@ -22,6 +22,13 @@ define(function() {
             });
     }
 
+    function indexButtonChange(event) {
+        var index = $('#renewableByYear').val();
+        $('#renewableByYear').val(parseInt(index) + event.data.value);
+        getRenewableByYear();
+    }
+
+
     var renewablesByYear = {
         color: 'red',
         size: 'big',
@@ -30,6 +37,14 @@ define(function() {
             $('#elf-view').load('/renewables/renewables-by-year-page', function() { //r
                 $('#display').html(renewablesByYear.color);
                 $('#display2').html(renewablesByYear.size);
+
+                $('#plusButton').click({
+                    value: 1
+                }, indexButtonChange);
+                $('#minusButton').click({
+                    value: -1
+                }, indexButtonChange);
+
                 $('#renewableByYear').change(function() {
                     getRenewableByYear();
                 });

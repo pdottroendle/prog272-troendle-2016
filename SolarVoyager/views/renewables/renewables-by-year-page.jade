@@ -6,9 +6,12 @@
 
     .alert.alert-success
         p#display
+        p#display2
 
     .alert.alert-info
-        p#display2
+
+        button#plusButton.btn.btn-success.btn-number(type='button') + increment
+        button#minusButton.btn.btn-success.btn-number(type='button') - decrement
 
     .alert.alert-info
         input#renewableByYear(type='number' value='2010')
