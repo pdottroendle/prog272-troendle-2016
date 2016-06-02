@@ -7,7 +7,7 @@ define(function() {
 
     function getRenewable() {
         console.log('getRenewable called');
-        $.getJSON('/high-tech-energy', function(response) {
+        $.getJSON('/renewables', function(response) {
                 console.log(response);
 
                 // renewables.renewablesList = response.renewables;

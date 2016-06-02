@@ -13,7 +13,7 @@ define(function() {
         var indexInput = $('#renewableByIndex').val();
         console.log('getRenewableByIndex called', indexInput);
 
-        $.getJSON('/high-energy-tech/byIndex/' + indexInput, function(response) {
+        $.getJSON('/renewablesByIndex/' + indexInput, function(response) {
                 console.log(response);
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
@@ -35,7 +35,7 @@ define(function() {
         getRenewableByIndex();
     }
 
-    var energyTypes = {
+    var renewablesByIndex = {
         color: 'red',
         size: 'big',
         init: function() {
@@ -58,5 +58,5 @@ define(function() {
             });
         }
     };
-    return energyTypes;
+    return renewablesByIndex;
 });
