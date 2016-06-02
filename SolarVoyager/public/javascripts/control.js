@@ -22,7 +22,7 @@ define(['jquery', 'home', 'about', 'renewables', 'renewablesByIndex',
                 //console.log(this.color);
                 $('#aboutMenu').click(about.init);
                 $('#homeMenu').click(home.init);
-                $('#renewablesMenu').click(renewables/renewables.init);
+                $('#renewablesMenu').click(renewables.init);
                 $('#renewablesByIndexMenu').click(renewablesByIndex.init);
                 $('#renewablesByYearMenu').click(renewablesByYear.init);
                 $('#highTechEnergyOverviewMenu').click(energyOverview.init);

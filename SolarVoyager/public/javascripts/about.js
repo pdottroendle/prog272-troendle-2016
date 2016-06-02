@@ -9,7 +9,7 @@ define(function () {
         location: 'Bellevue, WA',
         init: function () {
             $('#elf-view').load('/about', function () {
-                $('#display').html(about.college + ' ' + about.location);
+                $('#display').html(about.college + ' , ' + about.location);
             });
         }
     };
