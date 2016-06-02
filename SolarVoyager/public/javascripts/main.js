@@ -15,13 +15,13 @@ requirejs.config({
         renewablesByYear: 'javascripts/renewables/renewables-year',
         energyOverview: 'javascripts/high-tech-energy/energy-overview',
         energyTypes: 'javascripts/high-tech-energy/energy-types',
-        //msnTypes: 'javascripts/high-tech-energy/msn-types'
+        msnTypes: 'javascripts/high-tech-energy/msn-types'
     }
 });
 
-requirejs(['jquery'], function($) {
+requirejs(['jquery'], function ($) {
     'use strict';
-    requirejs(['bootstrap', 'control'], function(bootstrap, control) {
+    requirejs(['bootstrap', 'control'], function (bootstrap, control) {
         control.init();
     });
 });

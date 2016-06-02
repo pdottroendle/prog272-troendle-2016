@@ -8,7 +8,7 @@ var fs = require('fs');
 
 router.get('/', function(request, response) {
     'use strict';
-    console.log('high-tech-energy called');
+    console.log('/energy-overview called');
 
     fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
         if (err) {
@@ -25,9 +25,10 @@ router.get('/', function(request, response) {
     });
 
 });
-router.get('/:id', function(request, response) {
+
+router.get('/energy-types/:id', function(request, response) {
     'use strict';
-    console.log('high-tech-energy page called');
+    console.log('/energy-types called');
     response.render('high-tech-energy/' + request.params.id, {
         title: 'ElfComponent'
     });

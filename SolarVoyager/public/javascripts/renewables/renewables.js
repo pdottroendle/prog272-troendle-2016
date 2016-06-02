@@ -1,17 +1,17 @@
-define(['jquery'], function($) {
+define(['jquery'], function ($) {
     'use strict';
     var index = 0;
-
+    console.log('renewables.js');
     function getRenewable() {
         console.log('getRenewable called');
         $.getJSON('/renewables/', function (response) {
-            console.log(response);
+                console.log(response);
 
                 renewables.renewablesList = response.renewables; //  cc < ==== HERE
                 showRenewable(renewables.renewablesList[index]); //  cc < ==== HERE
 
             $('#debug').html(JSON.stringify(response, null, 4));
-        })
+            })
             .fail(function (a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
@@ -42,21 +42,21 @@ define(['jquery'], function($) {
     function showRenewable(renewable) {
         'use strict';
         renewable = getSimpleKeys(renewable);
-        $('#yearview').val(renewable.year);    //.html if not in a field
-        $('#solarview').val(renewable.solar);
-        $('#geoview').val(renewable.geo);
-        $('#biomassview').val(renewable.biomass);
-        $('#windview').val(renewable.wind);
-        $('#liquidview').val(renewable.liquid);
-        $('#woodview').val(renewable.wood);
-        $('#hydroview').val(renewable.hydro);
+        $('#yearView').val(renewable.year);    //.html if not in a field
+        $('#solarView').val(renewable.solar);
+        $('#geoView').val(renewable.geo);
+        $('#biomassView').val(renewable.biomass);
+        $('#windView').val(renewable.wind);
+        $('#liquidView').val(renewable.liquid);
+        $('#woodView').val(renewable.wood);
+        $('#hydroView').val(renewable.hydro);
     }
 
     function indexChange(test) {
         if (test < 12 && test >= 0) {
             index = test;
             $('#indexInput').val(index);
-            showRenewable(renewables.energyOverviewList[index]);
+            showRenewable(renewables.renewablesList[index]);
         }
     }
 
@@ -84,10 +84,10 @@ define(['jquery'], function($) {
                 $('#minusButton').click({value: -1}, indexButtonChange);
                 $('#indexInput').change(buttonChange);
                 $('#renewable').change(function () {
-                    getRenewable();
-                });
                 getRenewable();
             });
+            getRenewable();
+             });
         }
 
     };

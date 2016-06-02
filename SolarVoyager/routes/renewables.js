@@ -7,7 +7,7 @@ var fs = require('fs');
 
 router.get('/', function (request, response) {
     'use strict';
-    console.log('Renewables called');
+    console.log('/renewables called');
 
     fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
         if (err) {
@@ -25,9 +25,9 @@ router.get('/', function (request, response) {
 
 });
 
-router.get('/byIndex/:id', function (request, response) {
+router.get('/ByIndex/:id', function (request, response) {
     'use strict';
-    console.log('Renewables By Index called', request.params.id);
+    console.log('/renewablesByIndex called', request.params.id);
 
     fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
         if (err) {
@@ -44,9 +44,9 @@ router.get('/byIndex/:id', function (request, response) {
     });
 });
 
-router.get('/byYear/:id', function (request, response) {
+router.get('/ByYear/:id', function (request, response) {
     'use strict';
-    console.log('Renewables By Year called', request.params.id);
+    console.log('/renewablesByYear called', request.params.id);
 
     fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
         if (err) {

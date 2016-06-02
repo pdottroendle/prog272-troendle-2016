@@ -1,17 +1,17 @@
 /**
  * Created by bcuser on 5/22/16.
  */
-$('#renewableByIndex').change(function() {
+$('#energyByIndex').change(function() {
     'use strict';
-    getRenewableByIndex();
+    getEnergyByIndex();
 });
 
 define(function() {
     'use strict';
 
-    function getRenewableByIndex() {
-        var indexInput = $('#renewableByIndex').val();
-        console.log('getRenewableByIndex called', indexInput);
+    function getEnergyByIndex() {
+        var indexInput = $('#energyByIndex').val();
+        console.log('getEnergyByIndex called', indexInput);
 
         $.getJSON('/high-energy-tech/byIndex/' + indexInput, function(response) {
                 console.log(response);
@@ -30,19 +30,19 @@ define(function() {
     }
 
     function indexButtonChange(event) {
-        var index = $('#renewableByIndex').val();
-        $('#renewableByIndex').val(parseInt(index) + event.data.value);
-        getRenewableByIndex();
+        var index = $('#energyByIndex').val();
+        $('#energyByIndex').val(parseInt(index) + event.data.value);
+        getEnergyByIndex();
     }
 
     var energyTypes = {
         color: 'red',
         size: 'big',
         init: function() {
-            console.log(renewablesByIndex.color);
-            $('#elf-view').load('/renewables/renewables-by-index-page', function() { //r
-                $('#display').html(renewablesByIndex.color);
-                $('#display2').html(renewablesByIndex.size);
+            console.log(energyByIndex.color);
+            $('#elf-view').load('/high-energy-tech/renewables-by-index-page', function() { //r
+                $('#display').html(energyByIndex.color);
+                $('#display2').html(energyByIndex.size);
 
                 $('#plusButton').click({
                     value: 1
@@ -51,11 +51,11 @@ define(function() {
                     value: -1
                 }, indexButtonChange);
 
-                $('#renewableByIndex').change(function() {
-                    getRenewableByIndex();
+                //$('#energyByIndex').change(function() {
+                    getEnergyByIndex();
                 });
-                getRenewableByIndex();
-            });
+                //getRenewableByIndex();
+            //});
         }
     };
     return energyTypes;

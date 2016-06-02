@@ -3,6 +3,7 @@
  */
 $('#renewableByIndex').change(function() {
     'use strict';
+    console.log('renewables-index.js');
     getRenewableByIndex();
 });
 
