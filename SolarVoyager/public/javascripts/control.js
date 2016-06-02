@@ -1,22 +1,20 @@
-define(['jquery', 'home', 'about', 'renewables', 'renewablesByIndex',
-        'renewablesByYear', 'energyOverview', 'energyTypes'
+define(['jquery','home','about','renewables','renewablesByIndex','renewablesByYear', 'energyOverview', 'energyTypes'
     ],
-    function ($, home, about, renewables, renewablesByIndex, renewablesByYear,
-              energyOverview, energyTypes) {
+    function ($, home, about, renewables, renewablesByIndex, renewablesByYear,energyOverview, energyTypes) {
         'use strict';
         console.log('control.js');
         function showBar() {
             //console.log('Show Bar Clicks called now');
-            $('#display2').html('bar');
+            $('#display2').html('control');
         }
 
-        var control;
+        var control
         control = {
             color: 'purple',
             size: 'unisize',
             setup: function () {
                 $(document).on('click', '#showClick', showBar);
-                $('#display2').html(control.color + ' - ' + control.size);
+                $('#display2').html(control.color + ' , ' + control.size);
             },
             init: function () {
                 //console.log(this.color);
@@ -35,7 +33,6 @@ define(['jquery', 'home', 'about', 'renewables', 'renewablesByIndex',
 
         return control;
     });
-
 
 $(document).ready(function () {
     'use strict';

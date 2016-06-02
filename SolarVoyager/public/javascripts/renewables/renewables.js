@@ -71,7 +71,7 @@ define(['jquery'], function ($) {
     };
 
     var renewables = {
-        color: 'red',
+        color: 'display of the energy data',
         size: 'big',
         renewablesList: [],         //  cc < ==== HERE
         getRenewable: getRenewable, //  cc < ==== HERE

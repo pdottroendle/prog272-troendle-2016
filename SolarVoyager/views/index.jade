@@ -31,7 +31,7 @@ block content
                             b.caret
                         ul.dropdown-menu(role='menu')
                             li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-types')}")
-                                a#MenuhighTechEnergyTypesMenu  Energy Types
+                                a#highTechEnergyTypesMenu  Energy Types
                             li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-overview')}")
                                 a#highTechEnergyOverview  Energy Selector
                     li.trigger-collapse(ng-class="{ active: isActive('/about')}")
@@ -41,6 +41,7 @@ block content
         br
         p Welcome to #{title}
 
+    //
         button#homeMenu.btn.btn-secondary Home
         button#aboutMenu.btn.btn-primary About
         button#renewablesMenu.btn.btn-info Renewables
@@ -51,7 +52,6 @@ block content
         input#renewableByIndex( type='number', value='2' )
         button#renewablesByYearMenu.btn.btn-info Renewables by Year
         input#renewableByYear( type='number', value='2010' )
-        p
 
         p
 
