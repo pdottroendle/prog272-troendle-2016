@@ -8,12 +8,9 @@
         p#display
 
     .alert.alert-info
-        p#display2
 
-    .alert.alert-info
-        input#renewableByIndex(type='number' value='2')
+        button#minusButton.btn.btn-success.btn-number(type='button') + increment
+        input#renewableByIndex( type='number', value='2' )
+        button#plusButton.btn.btn-success.btn-number(type='button') - decrement
 
         pre#debug
-
-    button#plusButton.btn.btn-success.btn-number(type='button') + increment
-    button#minusButton.btn.btn-success.btn-number(type='button') - decrement

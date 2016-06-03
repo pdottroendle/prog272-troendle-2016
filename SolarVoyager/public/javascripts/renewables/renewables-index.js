@@ -3,6 +3,7 @@
  */
 $('#renewableByIndex').change(function() {
     'use strict';
+    console.log('renewables-index.js');
     getRenewableByIndex();
 });
 
@@ -13,7 +14,7 @@ define(function() {
         var indexInput = $('#renewableByIndex').val();
         console.log('getRenewableByIndex called', indexInput);
 
-        $.getJSON('/renewablesByIndex/' + indexInput, function(response) {
+        $.getJSON('/renewables/byIndex/' + indexInput, function(response) {
                 console.log(response);
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
@@ -36,7 +37,7 @@ define(function() {
     }
 
     var renewablesByIndex = {
-        color: 'red',
+        color: 'display of the energy data by index',
         size: 'big',
         init: function() {
             console.log(renewablesByIndex.color);
