@@ -37,7 +37,7 @@ define(function() {
     }
 
     var renewablesByIndex = {
-        color: 'red',
+        color: 'display of the energy data by index',
         size: 'big',
         init: function() {
             console.log(renewablesByIndex.color);

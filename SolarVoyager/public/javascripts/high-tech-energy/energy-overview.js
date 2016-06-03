@@ -9,12 +9,6 @@ define(function () {
         console.log('getRenewable called');
         $.getJSON('/high-tech-energy', function (response) {
                 console.log(response);
-
-                // renewables.renewablesList = response.renewables;
-                // console.log(response.renewables);
-                // showRenewable(renewables.renewablesList[index]);
-                // console.log(renewables.renewablesList[index]);
-
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
             .done(function () {
@@ -30,13 +24,10 @@ define(function () {
     }
 
     var renewables = {
-        color: 'red',
+        color: 'display of the energy data ',
         size: 'big',
         init: function () {
-            console.log(renewables.color);
             $('#elf-view').load('/renewables/renewables-page', function () {
-                $('#display').html(renewables.color);
-                $('#display2').html(renewables.size);
                 $('#renewable').change(function () {
                     getRenewable();
                 });

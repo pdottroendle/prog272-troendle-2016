@@ -36,13 +36,13 @@ define(function() {
     }
 
     var energyTypes = {
-        color: 'red',
+        color: 'display of the energy data',
         size: 'big',
         init: function() {
-            console.log(energyByIndex.color);
+            console.log(energyTypes.color);
             $('#elf-view').load('/high-energy-tech/renewables-by-index-page', function() { //r
-                $('#display').html(energyByIndex.color);
-                $('#display2').html(energyByIndex.size);
+                $('#display').html(energyTypes.color);
+                $('#display2').html(energyTypes.size);
 
                 $('#plusButton').click({
                     value: 1

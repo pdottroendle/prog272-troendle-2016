@@ -42,14 +42,14 @@ define(['jquery'], function ($) {
     function showRenewable(renewable) {
         'use strict';
         renewable = getSimpleKeys(renewable);
-        $('#yearView').val(renewable.year);    //.html if not in a field
-        $('#solarView').val(renewable.solar);
-        $('#geoView').val(renewable.geo);
-        $('#biomassView').val(renewable.biomass);
-        $('#windView').val(renewable.wind);
-        $('#liquidView').val(renewable.liquid);
-        $('#woodView').val(renewable.wood);
-        $('#hydroView').val(renewable.hydro);
+        $('#yearView').html(renewable.year);    //.html if not in a field
+        $('#solarView').html(renewable.solar);
+        $('#geoView').html(renewable.geo);
+        $('#biomassView').html(renewable.biomass);
+        $('#windView').html(renewable.wind);
+        $('#liquidView').html(renewable.liquid);
+        $('#woodView').html(renewable.wood);
+        $('#hydroView').html(renewable.hydro);
     }
 
     function indexChange(test) {
