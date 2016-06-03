@@ -46,7 +46,7 @@ router.get('/ByIndex/:id', function (request, response) {
 
 router.get('/ByYear/:id', function (request, response) {
     'use strict';
-    console.log('/renewablesByYear called', request.params.id);
+    console.log('message /renewablesByYear called', request.params.id);
 
     fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
         if (err) {

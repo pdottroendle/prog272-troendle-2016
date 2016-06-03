@@ -21,9 +21,9 @@ block content
                         ul.dropdown-menu(role='menu')
                             li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables')}")
                                 a#renewablesMenu Renewables
-                            li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables-year')}")
-                                a#renewablesByIndexMenu Renewables By Year
                             li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables-index')}")
+                                a#renewablesByIndexMenu Renewables By Year
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables-year')}")
                                 a#renewablesByYearMenu Renewables Simple
                     li.collapse.dropdown
                         a.dropdown-toggle(data-toggle='dropdown')
@@ -33,7 +33,7 @@ block content
                             li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-types')}")
                                 a#highTechEnergyTypesMenu  Energy Types
                             li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-overview')}")
-                                a#highTechEnergyOverview  Energy Selector
+                                a#highTechEnergyOverviewMenu  Energy Overview
                     li.trigger-collapse(ng-class="{ active: isActive('/about')}")
                         a#aboutMenu About
     .container

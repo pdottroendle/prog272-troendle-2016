@@ -1,5 +1,3 @@
-//
-   Created by bcuser on 5/21/16.
 .jumbotron
 
     h3 Renewables
@@ -7,21 +5,21 @@
     .alert.alert-success
         p#display
 
-    .alert.alert-info
+    .alert.alert-secondary
+        p#display2
+
         pre#debug
 
         .container
             .panel.panel-default
-                .panel-heading Renewable
+                .panel-heading Renewable list indexed on the client side
                     .panel-body
                         .input-group
                         span.input-group-btn
-                            button#minusButton.btn.btn-danger.btn-number(type="button")
-                        span.glyphicon.glyphicon-minus
-                            input#indexInput.form-control.input-number(type="number", value=0, min='0', max='12')
+                            button#plusButton.btn.btn-success.btn-number(type="button") + increment
+                        input#indexInput.form-control.input-number(type="number", value=0, min='0', max='12')
                         span.input-group-btn
-                            button#plusButton.btn.btn-success.btn-number(type="button")
-                        span.glyphicon.glyphicon-plus
+                            button#minusButton.btn.btn-danger.btn-number(type="button") - decrement
                         .input-group
                         span.input-group-addon Year renewables
                             #yearView.form-control(type='text', placeholder='year')
