@@ -1,16 +1,32 @@
-define(['jquery'], function ($) {
+define(['jquery', 'msnTypes'], function ($, msnTypes) {
     'use strict';
     var index = 0;
     console.log('energy-types.js');
     function getRenewable() {
         console.log('energy-types called');
         $.getJSON('/high-tech-energy/', function (response) {
-                console.log(response);
+                //console.log(response);
 
-                ZZZZ.energyList = response.renewables; //  cc < ==== HERE
-                showRenewable(ZZZZ.energyList[index]); //  cc < ==== HERE
+                //ZZZZ.energyList = response.renewables; //  cc < ==== HERE
+                //showRenewable(ZZZZ.energyList[index]); //  cc < ==== HERE
 
-                $('#debug').html(JSON.stringify(response, null, 4));
+                var temp0 =  response.renewables ;
+                //console.log( '0', temp0);
+                var temp = msnTypes(response.renewables);
+                $('#debug').html( temp[0]['msn'] + ' : ' + temp[0]['description'] + ' \n' +
+                    temp[1]['msn'] + ' : ' + temp[1]['description'] + ' \n' +
+                    temp[2]['msn'] + ' : ' + temp[2]['description'] + ' \n' +
+                    temp[3]['msn'] + ' : ' + temp[3]['description'] + ' \n' +
+                    temp[4]['msn'] + ' : ' + temp[4]['description'] + ' \n' +
+                    temp[5]['msn'] + ' : ' + temp[5]['description'] + ' \n' +
+                    temp[6]['msn'] + ' : ' + temp[6]['description'] + ' \n' +
+                    temp[7]['msn'] + ' : ' + temp[7]['description'] + ' \n' +
+                    temp[8]['msn'] + ' : ' + temp[8]['description'] + ' \n' +
+                    temp[9]['msn'] + ' : ' + temp[9]['description'] + ' \n' +
+                    temp[10]['msn'] + ' : ' + temp[10]['description'] + ' \n' +
+                    temp[11]['msn'] + ' : ' + temp[11]['description'] ) ;
+                //$('#debug0').html( JSON.stringify(temp), null, 4);
+
             })
             .fail(function (a, b, c) {
                 console.log('Error', a, b, c);
