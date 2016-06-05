@@ -26,11 +26,11 @@ router.get('/', function(request, response) {
 
 });
 
-router.get('/ByIndex/:id', function (request, response) {
+router.get('/ByIndex/:id', function(request, response) {
     'use strict';
     console.log('/energy-types ByIndex/:id called', request.params.id);
 
-    fs.readFile('data/HighTechEnergy.json', 'utf8', function (err, data) {
+    fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);

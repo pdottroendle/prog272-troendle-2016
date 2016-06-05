@@ -41,8 +41,6 @@ router.get('/renewables', function(request, response) {
 
 });
 
-
-
 router.get('/renewablesByIndex/:id', function(request, response) {
     'use strict';
     console.log('Renewables By Index called', request.params.id);
@@ -148,4 +146,3 @@ router.get('/renewables/:id', function(request, response) {
     });
 });
 */
-
