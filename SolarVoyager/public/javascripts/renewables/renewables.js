@@ -26,7 +26,7 @@ define(['jquery'], function($) {
     }
 
     function getSimpleKeys(renewable) {
-        'use strict';
+        //'use strict';
         return {
             // jscs:disable requireDotNotation
             year: renewable['Year'],
@@ -41,7 +41,7 @@ define(['jquery'], function($) {
     }
 
     function showRenewable(renewable) {
-        'use strict';
+        //'use strict';
         var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a separate name
         $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
         $('#solarView').html(renewablex.solar);

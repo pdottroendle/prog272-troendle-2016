@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var fs = require('fs');    week09
+var fs = require('fs'); //  week09
 var energyUtils = require('../routes/energy-utils.js');
 
 /* GET home page. */
@@ -11,16 +11,6 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/:id', function(request, response) {
-    'use strict';
-    response.render(request.params.id, {
-        title: 'ElfComponent'
-    });
-});
-
-module.exports = router;
-
-/*
 router.get('/renewables', function(request, response) {
     'use strict';
     console.log('Renewables called');
@@ -110,11 +100,18 @@ router.get('/renewablesByIndexSorted/:id', function(request, response) {
             });
         }
     });
-}); */
-/*
+});
+
+router.get('/renewables/:id', function(request, response) {
+    'use strict';
+    response.render('renewables/' + request.params.id, {
+        title: 'ElfComponent'
+    });
+});
+
 router.get('/high-tech-energy', function(request, response) {
     'use strict';
-    console.log('high-tech-energy called');
+    console.log('/energy-overview called');
 
     fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
         if (err) {
@@ -131,18 +128,39 @@ router.get('/high-tech-energy', function(request, response) {
     });
 
 });
+
+router.get('/high-tech-energy/ByIndex/:id', function(request, response) {
+    'use strict';
+    console.log('/energy-types ByIndex/:id called', request.params.id);
+
+    fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
+        if (err) {
+            // response.send(err, 404);
+            response.status(404).send(err);
+        } else {
+            var json = JSON.parse(data);
+            //console.log(json);
+            response.send({
+                result: 'Success',
+                renewables: json[parseInt(request.params.id)]
+            });
+        }
+    });
+});
+
 router.get('/high-tech-energy/:id', function(request, response) {
     'use strict';
-    console.log('high-tech-energy page called');
+    console.log('/energy-types :id called');
     response.render('high-tech-energy/' + request.params.id, {
         title: 'ElfComponent'
     });
 });
 
-router.get('/renewables/:id', function(request, response) {
+router.get('/:id', function(request, response) {
     'use strict';
-    response.render('renewables/' + request.params.id, {
+    response.render(request.params.id, {
         title: 'ElfComponent'
     });
 });
-*/
+
+module.exports = router;
