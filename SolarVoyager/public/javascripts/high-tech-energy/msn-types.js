@@ -1,4 +1,4 @@
-define(function () {
+define(function() {
     'use strict';
 
     function getMsnTypes(energyTypes) {
@@ -30,7 +30,7 @@ define(function () {
             return result;
         }
 
-        energyTypes.forEach(function (energyType, index) {
+        energyTypes.forEach(function(energyType, index) {
             // console.log('energyType index and index length', index, msnTypes.length);
             energyType.Year = energyType.YYYYMM.substr(0, 4);
             energyType.Month = energyType.YYYYMM.substr(4);

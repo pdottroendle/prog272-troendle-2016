@@ -1,16 +1,16 @@
 /**
  * Created by bcuser on 5/21/16.
  */
-define(function () {
+define(function() {
     'use strict';
     console.log('home.js');
     var home = {
-        project: 'Midterm " The Solar Voyager " handling Energy data',
-        supervision: 'PROG 272 instructor Charles Calvert',
-        init: function () {
-            $('#elf-view').load('/home', function () { //r
-                $('#display').html(home.project);
-                $('#display2').html(home.supervision);
+        color: 'red',
+        size: 'big',
+        init: function() {
+            $('#elf-view').load('/home', function() {
+                $('#display').html(home.color);
+                $('#display2').html(home.size);
             });
         }
     };

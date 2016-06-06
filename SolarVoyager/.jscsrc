@@ -4,5 +4,5 @@
     "validateQuoteMarks": "'",
     "excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "**/data/**"],
     "requireCamelCaseOrUpperCaseIdentifiers": false,
-    "maximumLineLength": 120
+    "maximumLineLength": 120,
 }

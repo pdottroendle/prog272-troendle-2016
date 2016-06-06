@@ -5,11 +5,11 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-router.get('/', function (request, response) {
+router.get('/', function(request, response) {
     'use strict';
     console.log('/renewables called');
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -25,11 +25,11 @@ router.get('/', function (request, response) {
 
 });
 
-router.get('/ByIndex/:id', function (request, response) {
+router.get('/ByIndex/:id', function(request, response) {
     'use strict';
     console.log('/renewablesByIndex called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -44,11 +44,11 @@ router.get('/ByIndex/:id', function (request, response) {
     });
 });
 
-router.get('/ByYear/:id', function (request, response) {
+router.get('/ByYear/:id', function(request, response) {
     'use strict';
-    console.log('/renewablesByYear called', request.params.id);
+    console.log('message /renewablesByYear called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -74,11 +74,11 @@ router.get('/ByYear/:id', function (request, response) {
     });
 });
 
-router.get('/byIndexSorted/:id', function (request, response) {
+router.get('/byIndexSorted/:id', function(request, response) {
     'use strict';
     console.log('Renewables By Index Sorted called', request.params.id);
 
-    fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -96,13 +96,11 @@ router.get('/byIndexSorted/:id', function (request, response) {
     });
 });
 
-
-router.get('/:id', function (request, response) {
+router.get('/:id', function(request, response) {
     'use strict';
     response.render('renewables/' + request.params.id, {
         title: 'ElfComponent'
     });
 });
-
 
 module.exports = router;

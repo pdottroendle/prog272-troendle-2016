@@ -1,106 +1,103 @@
-define(['jquery'], function ($) {
+define(['jquery'], function($) {
     'use strict';
-    console.log('renewables-year.js');
-    var index = 0;
-    function getRenewableByYear() {
-        //var index = $('#renewableByYear').val();
-                console.log('getRenewableByYear called');
-                $.getJSON('/renewables/byYear/' + index, function (response) {    //yearInput
-                        console.log(response);
+    var index = 2009;
+    console.log('renewables.js');
 
-                        renewables.renewablesList = response.renewables; //  cc < ==== HERE
-                        showRenewable(renewables.renewablesList[index]); //  cc < ==== HERE
+    function getRenewable() {
+        console.log('getRenewable called');
+
+        $.getJSON('/renewables/ByYear/' + index, function(response) {
+                console.log(response);
+
+                //ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
+                //showRenewable(ZZZZ.renewablesList[index]); //  cc < ==== HERE
+                showRenewable(response.renewables);
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
-            .done(function () {
-                console.log('second success');
-            })
-            .fail(function (a, b, c) {
+            .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .always(function () {
+            .done(function() {
+                console.log('second success');
+            })
+            .always(function() {
                 console.log('complete');
             });
     }
 
-
-    /*
-    function indexButtonChange(event) {
-        var index = $('#renewableByYear').val();
-        $('#renewableByYear').val(parseInt(index) + event.data.value);
-        getRenewableByYear();
-    } */
-
     function getSimpleKeys(renewable) {
         'use strict';
         return {
+            // jscs:disable requireDotNotation
             year: renewable['Year'],
             solar: renewable['Solar (quadrillion Btu)'],
             geo: renewable['Geothermal (quadrillion Btu)'],
             biomass: renewable['Other biomass (quadrillion Btu)'],
             wind: renewable['Wind power (quadrillion Btu)'],
             liquid: renewable['Liquid biofuels (quadrillion Btu)'],
-            wood: renewable['Wood biomass (quadrillion Btu'],
+            wood: renewable['Wood biomass (quadrillion Btu)'],
             hydro: renewable['Hydropower (quadrillion Btu)']
-
-        }
+        }; // jscs:enable requireDotNotation
     }
 
     function showRenewable(renewable) {
         'use strict';
-        renewable = getSimpleKeys(renewable);
-        $('#yearView').html(renewable.year);    //.html if not in a field
-        $('#solarView').html(renewable.solar);
-        $('#geoView').html(renewable.geo);
-        $('#biomassView').html(renewable.biomass);
-        $('#windView').html(renewable.wind);
-        $('#liquidView').html(renewable.liquid);
-        $('#woodView').html(renewable.wood);
-        $('#hydroView').html(renewable.hydro);
+        var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a different name
+        $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
+        $('#solarView').html(renewablex.solar);
+        $('#geoView').html(renewablex.geo);
+        $('#biomassView').html(renewablex.biomass);
+        $('#windView').html(renewablex.wind);
+        $('#liquidView').html(renewablex.liquid);
+        $('#woodView').html(renewablex.wood);
+        $('#hydroView').html(renewablex.hydro);
     }
 
-    function indexChange(test) {
-        if (test < 12 && test >= 0) {
+    function indexChange(test) { //   static form value is read and written back validated
+        if (test < 2018 && test >= 2006) {
             index = test;
-            $('#indexInput').val(index);
-            showRenewable(renewables.renewablesList[index]);
+            $('#indexInput').val(index); // the value is send back to the field
+            // showRenewable(ZZZZ.renewablesList[index]);
+            getRenewable();
         }
     }
 
-    var indexButtonChange = function (event) {
+    var indexButtonChange = function(event) { // the user  +  or  - event is added or substracted to the value
         var test = event.data.value + index;
         indexChange(test);
     };
 
-    var buttonChange = function () {
-        var test = $('#indexInput').val();
+    var buttonChange = function() {
+        var test = $('#indexInput').val(); // the default value or the user filled input is taken
         indexChange(parseInt(test));
     };
 
-    var renewablesByYear = {
-        color: 'display of the energy data by year',
-        size: 'big',
-        init: function () {
-            console.log(renewablesByYear.color);
-            $('#elf-view').load('/renewables/renewables-by-year-page', function () { //r
-                $('#display').html(renewablesByYear.color);
-                $('#display2').html(renewablesByYear.size);
-
+    var ZZZZ = { // ppt < ==== needed a variable name that more distinctable than "renewables"
+        color: 'display of the energy data',
+        size: 'server side indexed (GET /:id )',
+        renewablesList: [], //  cc < ==== HERE
+        getRenewable: getRenewable, //  cc < ==== HERE
+        init: function() {
+            console.log(ZZZZ.color);
+            $('#elf-view').load('/renewables/renewables-page', function() {
+                $('#display').html(ZZZZ.color);
+                $('#display2').html(ZZZZ.size);
                 $('#plusButton').click({
-                    value: 1
-                }, indexButtonChange);
+                    value: +1
+                }, indexButtonChange); // note the list has a descending order
                 $('#minusButton').click({
                     value: -1
                 }, indexButtonChange);
-
-                $('#renewableByYear').change(function () {
-                    getRenewableByYear();
-                });
-                getRenewableByYear();
+                $('#indexInput').change(buttonChange);
+                //$('#XXXX').change(function () {     // ppt < ==  renamed for clarity purpose "renewables"
+                //    getRenewable();
+                //});                  // ppt < ====== seemed not beeing used
+                getRenewable();
             });
         }
+
     };
-    return renewablesByYear;
+    return ZZZZ;
 });
