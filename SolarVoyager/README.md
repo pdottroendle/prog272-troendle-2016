@@ -19,11 +19,11 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 ## Week 07 Branch
 
 - [Week07-ExpressRoutesSolar Deeper Test][express-start-test2]
- [exp
+ [express-start-test2]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressRoutesSolarDeeper.html
 
 ## Week 08 Branch Midterm
 
-- [Week08-ExpressRoutesSolar Midterm][express-start-test3]
+- [Week08-ExpressRoutesSolar Refactor][express-start-test3]
  [express-start-test3]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressRoutesSolarRefactor.html
 
 - [Week08-ExpressRoutesSolar Midterm][express-start-test4]
@@ -38,5 +38,5 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 
 ## Week 09 Clean Solar
 
-- [Week08-ExpressRoutesSolar Refactor][express-start-test5]
+- [Week09-ExpressRoutesSolar Cleaner][express-start-test5]
  [express-start-test5]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressRoutesSolarCleaner.html
