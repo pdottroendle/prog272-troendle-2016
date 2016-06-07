@@ -1,19 +1,8 @@
+var request = {firstName: 'foo',lastName: 'bla'} , {firstName: 'foo2',lastName: 'bla2'}
 
-==============
-# prog272-troendle-2016
+$getJSON('/myRoute',request , function(result) {
 
-this is my new README :)
+router.get('/myRoute', function(request, response){
+console.log(request.query[0].firstName);
 
-  ## Week 05 Branch
-
-  - [Angular Solar Starter Assignment][solar-start]
-
-  [solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
-
-
-  ## Week 06 Branch
-
-  - [Angular Solar Starter Tests Assignment][solar-start-test]
-  [solar-start-test]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
-
-
+~/Git/JsObjects/Data code examples
