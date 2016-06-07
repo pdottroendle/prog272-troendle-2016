@@ -1,0 +1,44 @@
+.jumbotron
+
+    h3 Renewables by year
+
+        .alert.alert-success
+            p#display
+        .alert.alert-secondary
+            p#display2
+
+        .container
+            .panel.panel-default
+                .panel-heading Renewable energies
+                    .panel-body
+                        .input-group
+                        span.input-group-btn
+                            button#plusButton.btn.btn-success.btn-number(type="button") + increment
+                        input#indexInput.form-control.input-number(type="number", value=2010 , min='2006', max='2017')
+                        span.input-group-btn
+                            button#minusButton.btn.btn-danger.btn-number(type="button") - decrement
+                        .input-group
+                        span.input-group-addon Year renewables
+                            #yearView.form-control(type='text', placeholder='year')
+                        .input-group
+                        span.input-group-addon Solar renewables
+                            #solarView.form-control(type='text', placeholder='solar')
+                        .input-group
+                        span.input-group-addon Geothermal renewables
+                            #geoView.form-control(type='text', placeholder='geo')
+                        .input-group
+                        span.input-group-addon Other biomass renewables
+                            #biomassView.form-control(type='text', placeholder='bio')
+                        .input-group
+                        span.input-group-addon Wind power renewables
+                            #windView.form-control(type='text', placeholder='wind')
+                        .input-group
+                        span.input-group-addon Liquid biofuels renewables
+                            #liquidView.form-control(type='text', placeholder='liquid')
+                        .input-group
+                        span.input-group-addon Wood biomass renewables
+                            #woodView.form-control(type='text', placeholder='wood')
+                        .input-group
+                        span.input-group-addon Hydropower renewables
+                            #hydroView.form-control(type='text', placeholder='hydro')
+

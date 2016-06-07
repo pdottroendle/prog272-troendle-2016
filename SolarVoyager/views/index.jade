@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='./') Solar Explorer
+            nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+                ul.nav.navbar-nav
+                    li.trigger-collapse(ng-class="{ active: isActive('/home')}")
+                        a#homeMenu Home
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Renewables
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables')}")
+                                a#renewablesMenu Renewables
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables-index')}")
+                                a#renewablesByIndexMenu Renewables By Year
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables/renewables-year')}")
+                                a#renewablesByYearMenu Renewables Simple
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Energy
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                            li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-types')}")
+                                a#highTechEnergyTypesMenu  Energy Types
+                            li.trigger-collapse(ng-class="{ active: isActive('/energy-types/energy-overview')}")
+                                a#highTechEnergyOverviewMenu  Energy Overview
+                    li.trigger-collapse(ng-class="{ active: isActive('/about')}")
+                        a#aboutMenu About
+    .container
+
+        br
+        p Welcome to #{title}
+
+
+        button#homeButton.btn.btn-secondary Home
+        button#highTechEnergyOverviewButton.btn.btn-success High Tech Energy Overview
+        button#highTechEnergyTypesButton.btn.btn-success High Tech Energy Types
+        br
+        button#renewablesButton.btn.btn-info Renewables
+        button#renewablesByIndexButton.btn.btn-info Renewables by Index
+        //input#renewableByIndex( type='number', value='2' )
+        button#renewablesByYearButton.btn.btn-info Renewables by Year
+        //input#renewableByYear( type='number', value='2010' )
+        button#aboutButton.btn.btn-primary About
+
+        p
+
+    #elf-view
+
+        //
+         div
+         input.form-control( id=yearview, type ='text' , placeholder ='enter year' )
+         input#solarview.form-control( type ='text' , placeholder ='enter solar' )
+         input#geoview.form-control( type ='text' , placeholder ='enter geo' )
+         input#biomassview.form-control( type ='text' , placeholder ='enter biomass' )
+         input#windview.form-control( type ='text' , placeholder ='enter wind' )
+         input#liquidview.form-control( type ='text' , placeholder ='enter liquid' )
+         input#woodview.form-control( type ='text' , placeholder ='enter wood' )
+         input#hydroview.form-control( type ='text' , placeholder ='enter hydro' )
+
+
+
+
+
+pre#debug
+
