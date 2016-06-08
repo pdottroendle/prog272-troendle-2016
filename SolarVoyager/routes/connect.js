@@ -36,7 +36,7 @@ var connect = {
     },
 
     doConnection: function(useSimple) {
-        var connectType = useSimple || false;     // week 10
+        var connectType = useSimple || false;     // makes all Mlab and true is local week 10
         if (connectType) {
             connect.simpleConnect();
         } else {

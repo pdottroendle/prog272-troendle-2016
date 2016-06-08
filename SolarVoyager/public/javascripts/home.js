@@ -30,7 +30,7 @@ define(function() {
                 $('#display').html(home.color);
                 $('#display2').html(home.size);
                 getSettings();
-                $("#target").submit(function(event) {
+                $("#target").submit(function(event) {  //only if submit
                     event.preventDefault();
                     var userFormData = $(this).serialize();
                     $('#debug').html(userFormData);
