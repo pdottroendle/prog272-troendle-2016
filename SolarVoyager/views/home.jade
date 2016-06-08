@@ -1,0 +1,25 @@
+.container
+    .jumbotron
+        h1 Home Page
+
+    .panel.panel-default
+        .panel-heading Renewable
+        .panel-body
+            form#target(method='post', action='/bar')
+                select#dataType(name='dataType')
+                    option Database
+                    option JSON
+                hr
+                select#dataSource(name='dataSource')
+                    option Local MongoDb
+                    option MLab
+                hr
+                input#comment(type="text", name='comment' value='foo')
+                hr
+                input.btn.btn-success(type="submit", value='Submit')
+
+    .panel.panel-default
+        .panel-heading Renewable
+        .panel-body
+            .alert.alert-info
+                pre#debug
