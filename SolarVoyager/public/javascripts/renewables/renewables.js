@@ -1,12 +1,18 @@
 define(['jquery'], function($) {
     'use strict';
     var index = 0;
+    var useLocalDatabase = false;                //week11
+    var routeType = useLocalDatabase ? 0 : 1;
+    
+    var routeTypes = ['/allRenewables', '/renewables/'];   //week11
+    
     console.log('renewables.js');
-
+    
     function getRenewable() {
         console.log('getRenewable called');
-        $.getJSON('/renewables/', function(response) {
-                console.log(response);
+        //$.getJSON('/renewables/', function(response) {     //week11
+        $.getJSON(routeTypes[routeType], function(response) {
+            console.log(response);
 
                 ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
                 showRenewable(ZZZZ.renewablesList[index]); //  cc < ==== HERE

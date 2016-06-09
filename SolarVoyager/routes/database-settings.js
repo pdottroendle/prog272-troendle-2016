@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 
-
 function saveSettings(request, response) {
     console.log('request body', request.body);
 

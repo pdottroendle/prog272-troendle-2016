@@ -1,4 +1,3 @@
-
 define(function() {
     'use strict';
 
@@ -30,7 +29,7 @@ define(function() {
                 $('#display').html(home.color);
                 $('#display2').html(home.size);
                 getSettings();
-                $("#target").submit(function(event) {  //only if submit
+                $("#target").submit(function(event) {
                     event.preventDefault();
                     var userFormData = $(this).serialize();
                     $('#debug').html(userFormData);

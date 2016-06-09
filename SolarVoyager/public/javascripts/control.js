@@ -36,6 +36,10 @@ define(['jquery', 'home', 'about',
                 $('#highTechEnergyOverviewButton').click(energyOverview.init);
                 $('#highTechEnergyTypesButton').click(energyTypes.init);
 
+                //$('#insertValidData').click(renewables);
+                //$('#getAll').click(renewables);
+                //$('#emptyCollection').click(renewables);
+
                 home.init();
                 //$('elf-view').load('/main', this.setup);
             }
