@@ -34,6 +34,7 @@ router.get('/all-data', function(request, response) {
 });
 
 router.get('/emptyCollection', function(request, response) {
+  if (!connect.connected) { connect.doConnection(); } // added by CC
   scientists.remove({}, function(err) {
     if (err) {
       response.send({result: 'err', err: err});
