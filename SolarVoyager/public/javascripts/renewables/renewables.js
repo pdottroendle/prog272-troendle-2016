@@ -45,10 +45,12 @@ define(['jquery'], function($) {
             hydro: renewable['Hydropower (quadrillion Btu)']
         }; // jscs:enable requireDotNotation
     }
-
+    
+function showRenewables (renewable) {
     function showRenewable(renewable) {
         'use strict';
-        var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a separate name
+        if(!useLocalDatabase) {   // week10 Finals  - need the data from Mongoodb ??
+        var renewablex = getSimpleKeys(renewable);// the variable name is now distinguished by a separate name
         $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
         $('#solarView').html(renewablex.solar);
         $('#geoView').html(renewablex.geo);
@@ -56,7 +58,7 @@ define(['jquery'], function($) {
         $('#windView').html(renewablex.wind);
         $('#liquidView').html(renewablex.liquid);
         $('#woodView').html(renewablex.wood);
-        $('#hydroView').html(renewablex.hydro);
+        $('#hydroView').html(renewablex.hydro); }
     }
 
     function indexChange(test) { //   static form value is read and written back validated
