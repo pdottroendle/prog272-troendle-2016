@@ -44,6 +44,11 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 
 ## Week 10 Final Solar ( about REST calls)
 
+- [Mongo Starter Assignment][solar-start-test5]
+[solar-start-test5]:http://www.ccalvert.net/books/CloudNotes/Assignments/MongoStarter.html
+- [Angular Mongoose Assignment][solar-start-test6]
+[solar-start-test6]:http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
+
 - [Week10-ExpressRoutesSolar Final][express-start-test0]
  [express-start-test0]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Final2016.html
 
