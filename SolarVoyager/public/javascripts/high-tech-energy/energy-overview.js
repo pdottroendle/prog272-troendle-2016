@@ -30,7 +30,7 @@ define(['jquery', 'msnTypes'], function($, msnTypes) {
                 console.log('xxxxxxxxxxxxxx', temp);
                 var renewablex = [];
                 for (var i = 0; i < temp.length; i++) { // jscs:disable requireDotNotation
-                    renewablex[i] = temp[i]['msn'] + ' : ' + temp[i]['description'] + ' \n';
+                    renewablex[i] = temp[i].msn + ' : ' + temp[i].description + ' \n';
                 } // jscs:enable requireDotNotation
                 console.log('xxxxxxxxxxxxxx2', JSON.stringify(renewablex, null, 4));
                 $('#debug').html(renewablex);
@@ -48,19 +48,19 @@ define(['jquery', 'msnTypes'], function($, msnTypes) {
     }
 
     function getSimpleKeys(renewable) {
-        'use strict';
+        //'use strict';
         return { // jscs:disable requireDotNotation
-            year: renewable['MSN'],
-            solar: renewable['YYYYMM'],
-            geo: renewable['Value'],
-            biomass: renewable['Column_Order'],
-            wind: renewable['Description'],
-            liquid: renewable['Unit']
+            year: renewable.MSN,
+            solar: renewable.YYYYMM,
+            geo: renewable.Value,
+            biomass: renewable.Column_Order,
+            wind: renewable.Description,
+            liquid: renewable.Unit
         }; // jscs:enable requireDotNotation
     }
 
     function showRenewable(renewable) {
-        'use strict';
+        //'use strict';
         var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a separate name
         $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
         $('#solarView').html(renewablex.solar);

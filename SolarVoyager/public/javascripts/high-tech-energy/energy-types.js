@@ -1,3 +1,63 @@
+/*
+define(['msnTypes'], function(msnTypes) {
+
+    'use strict';
+
+    var renewablesList;
+
+    function getEnergyTypes(renewables) {
+
+    }
+
+    function getHighTechEnergy() {
+        console.log('getHighTechEnergy called');
+
+        $.getJSON('/high-tech-energy', function(response) {
+                console.log(response);
+                renewablesList = response.renewables;
+                getEnergyTypes(renewablesList);
+                var msnTypesList = msnTypes(renewablesList);
+                // $('#debug').html(JSON.stringify(msnTypes, null, 4));
+                displayMsnTypes(msnTypesList);
+            })
+            .done(function() {
+                console.log('second success');
+            })
+            .fail(function(a, b, c) {
+                console.log('Error', a, b, c);
+                $('#debug').html('Error occured: ', a.status);
+            })
+            .always(function() {
+                console.log('complete');
+            });
+    }
+
+    function displayMsnTypes(msnTypesList) {
+        msnTypesList.forEach(function(msnType) {
+            $('#msnTypes').append('<li><a class="msnTypeHit">' + msnType.msn + ':' + msnType.description + '</a></li>');
+        });
+        $('.msnTypeHit').click(function(event) {
+            alert(this.innerHTML);
+        });
+    }
+
+    var energyTypes = {
+        color: 'Green Energy Types',
+        size: 'Energy Types Size',
+
+        init: function() {
+            console.log(energyTypes.color);
+            $('#elf-view').load('/high-tech-energy/energy-types-page', function() {
+                $('#display').html(energyTypes.color);
+                $('#display2').html(energyTypes.size);
+                getHighTechEnergy();
+            });
+        }
+    };
+    return energyTypes;
+});
+*/
+
 define(['jquery'], function($) {
     'use strict';
     var index = 0;
@@ -28,20 +88,20 @@ define(['jquery'], function($) {
     }
 
     function getSimpleKeys(renewable) {
-        'use strict';
+        //'use strict';
         return {
             // jscs:disable requireDotNotation
-            year: renewable['MSN'],
-            solar: renewable['YYYYMM'],
-            geo: renewable['Value'],
-            biomass: renewable['Column_Order'],
-            wind: renewable['Description'],
-            liquid: renewable['Unit']
+            year: renewable.MSN,
+            solar: renewable.YYYYMM,
+            geo: renewable.Value,
+            biomass: renewable.Column_Order,
+            wind: renewable.Description,
+            liquid: renewable.Unit
         }; // jscs:enable requireDotNotation
     }
 
     function showRenewable(renewable) {
-        'use strict';
+        //'use strict';
         var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a different name
         $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
         $('#solarView').html(renewablex.solar);
