@@ -41,4 +41,12 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 - [Week09-ExpressRoutesSolar Cleaner][express-start-test5]
  [express-start-test5]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressRoutesSolarCleaner.html
 
-THESE ARE NAMED REST CALLS
+
+## Week 10 Final Solar ( about REST calls)
+
+- [Week10-ExpressRoutesSolar Final][express-start-test0]
+ [express-start-test0]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Final2016.html
+
+note:
+ sudo apt-get install mongodb
+ fails Mlab used instead

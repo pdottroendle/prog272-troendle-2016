@@ -45,7 +45,7 @@ define(['jquery'], function($) {
             hydro: renewable['Hydropower (quadrillion Btu)']
         }; // jscs:enable requireDotNotation
     }
-    
+
 function showRenewables (renewable) {
     function showRenewable(renewable) {
         'use strict';
