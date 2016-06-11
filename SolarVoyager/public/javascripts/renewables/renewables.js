@@ -1,18 +1,18 @@
 define(['jquery'], function($) {
     'use strict';
     var index = 0;
-    var useLocalDatabase = false;                //week11
+    var useLocalDatabase = false; //week11
     var routeType = useLocalDatabase ? 0 : 1;
-    
-    var routeTypes = ['/allRenewables', '/renewables/'];   //week11
-    
+
+    var routeTypes = ['/allRenewables', '/renewables/']; //week11
+
     console.log('renewables.js');
-    
+
     function getRenewable() {
         console.log('getRenewable called');
         //$.getJSON('/renewables/', function(response) {     //week11
         $.getJSON(routeTypes[routeType], function(response) {
-            console.log(response);
+                console.log(response);
 
                 ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
                 showRenewable(ZZZZ.renewablesList[index]); //  cc < ==== HERE
@@ -32,10 +32,10 @@ define(['jquery'], function($) {
     }
 
     function getSimpleKeys(renewable) {
-        'use strict';
+        //'use strict';
         return {
             // jscs:disable requireDotNotation
-            year: renewable['Year'],
+            year: renewable.Year,
             solar: renewable['Solar (quadrillion Btu)'],
             geo: renewable['Geothermal (quadrillion Btu)'],
             biomass: renewable['Other biomass (quadrillion Btu)'],
@@ -46,19 +46,19 @@ define(['jquery'], function($) {
         }; // jscs:enable requireDotNotation
     }
 
-function showRenewables (renewable) {
     function showRenewable(renewable) {
-        'use strict';
-        if(!useLocalDatabase) {   // week10 Finals  - need the data from Mongoodb ??
-        var renewablex = getSimpleKeys(renewable);// the variable name is now distinguished by a separate name
-        $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
-        $('#solarView').html(renewablex.solar);
-        $('#geoView').html(renewablex.geo);
-        $('#biomassView').html(renewablex.biomass);
-        $('#windView').html(renewablex.wind);
-        $('#liquidView').html(renewablex.liquid);
-        $('#woodView').html(renewablex.wood);
-        $('#hydroView').html(renewablex.hydro); }
+        //'use strict';
+        if (!useLocalDatabase) { // week10 Finals  - need the data from Mongoodb ??
+            var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a separate name
+            $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
+            $('#solarView').html(renewablex.solar);
+            $('#geoView').html(renewablex.geo);
+            $('#biomassView').html(renewablex.biomass);
+            $('#windView').html(renewablex.wind);
+            $('#liquidView').html(renewablex.liquid);
+            $('#woodView').html(renewablex.wood);
+            $('#hydroView').html(renewablex.hydro);
+        }
     }
 
     function indexChange(test) { //   static form value is read and written back validated
