@@ -9,6 +9,7 @@ requirejs.config({
         bootstrap: 'components/bootstrap/dist/js/bootstrap',
         control: 'javascripts/control',
         home: 'javascripts/home',
+        database: 'javascripts/database',
         about: 'javascripts/about',
         renewables: 'javascripts/renewables/renewables',
         renewablesByIndex: 'javascripts/renewables/renewables-index',

@@ -1,7 +1,7 @@
 define(['jquery'], function($) {
     'use strict';
     var index = 0;
-    var useDatabase  = true; //week11
+    var useDatabase  = true; //$('#dataType').val(response.settings.dataType);
     var routeType = useDatabase  ? 0 : 1;
 
     var renewableRoutes  = ['/allRenewables/all-data', '/renewables/']; //week11

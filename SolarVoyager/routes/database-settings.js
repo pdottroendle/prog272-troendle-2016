@@ -81,7 +81,7 @@ router.get('/getSettings', function(request, response) {
         } else {
             if (doc === null) {
                 response.send({
-                    Settings: {
+                    settings: {            // undercase  its used in home.js line 7
                         dataType: 'Database',
                         dataSource: 'Local MongoDb',
                         comment: 'Default Comment'
@@ -89,7 +89,7 @@ router.get('/getSettings', function(request, response) {
                 });
             } else {
                 response.send({
-                    Settings: doc
+                    settings: doc
                 });
             }
         }

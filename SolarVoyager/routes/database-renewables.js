@@ -8,6 +8,7 @@ var connect = require('./connect');
 router.get('/', function(req, res, next) {
     'use strict';
     res.send('respond with a resource');
+    //res.render('index', { title: 'Week10-Finals-troendle'
 });
 
 router.get('/all-data', function(request, response) {
@@ -18,17 +19,17 @@ router.get('/all-data', function(request, response) {
     }
 
     console.log('About to find renewables.');
-    settingsrenewables.find({}, function(err, data) {
+    settingsrenewables.find({}, function(err, allData) {
         //'use strict';
-        console.log(data.length);
-        console.log(data[0]);
-        var allData = data;
+        console.log(allData.length);
+        console.log(allData[0]);
+        var allData = allData;
 
         allMongo.writeData('data/renewables.json', allData);
 
         response.send({
             result: 'Success',
-            allData: data
+            allData: allData
         });
     });
 });
@@ -60,3 +61,4 @@ router.get('/:id', function(request, response) {
 });
 
 module.exports = router;
+
