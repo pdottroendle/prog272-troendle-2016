@@ -4,13 +4,8 @@ block content
   h1= title
   p Welcome to #{title}
 
+    button#insertValidData Insert Valid Data
+    button#getAll Get All
+    button#emptyCollection Empty Collection
 
-  div(ng-controller="MongoController")
-    button(ng-click="insertValidData()") Insert Valid Data
-    button(ng-click="getAll()") Get All
-    button(ng-click="emptyCollection()") EmptyCollection
-
-    div
-      pre {{allData}}
-
-    p {{display}}
+  pre#display
