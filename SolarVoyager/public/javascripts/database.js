@@ -1,7 +1,7 @@
 define(function () {
     'use strict';
 
-    var insertUrl = '/insertValidCollection';
+    var insertUrl = '/allRenewables/insertValidCollection';
 
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function (result) {
@@ -32,7 +32,7 @@ define(function () {
     }
 
     function getAll() {
-        $.getJSON('/all-data', function (result) {
+        $.getJSON('/allRenewables/all-data', function (result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
             .done(function () {
@@ -47,7 +47,7 @@ define(function () {
     }
 
     function emptyCollection() {
-        $.getJSON('/emptyCollection', function (result) {
+        $.getJSON('/allRenewables/emptyCollection', function (result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
             .done(function () {

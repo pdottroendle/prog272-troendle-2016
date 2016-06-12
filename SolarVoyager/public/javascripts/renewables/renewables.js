@@ -6,8 +6,8 @@ define(['jquery'], function($) {
 
     var renewableRoutes  = ['/allRenewables/all-data', '/renewables/']; //week11
 
-    console.log('renewables.js');
-
+    console.log('renewables.js  xxxxxxxxxxxxxxxxxxxxxxx');
+    console.log($('#dataType').val(response.settings.dataType));
     function getRenewable() {
         console.log('getRenewable called');
         //$.getJSON('/renewables/', function(response) {     //week11

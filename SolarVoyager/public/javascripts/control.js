@@ -1,8 +1,8 @@
 define(['jquery', 'home', 'about', 'database',
         'renewables', 'renewablesByIndex', 'renewablesByYear', 'energyOverview', 'energyTypes'
     ],
-    function($, home, about, database, renewables, renewablesByIndex, renewablesByYear,
-        energyOverview, energyTypes) {
+    function ($, home, about, database, renewables, renewablesByIndex, renewablesByYear,
+              energyOverview, energyTypes) {
         'use strict';
         console.log('control.js');
 
@@ -15,11 +15,11 @@ define(['jquery', 'home', 'about', 'database',
         control = {
             color: 'purple',
             size: 'unisize',
-            setup: function() {
+            setup: function () {
                 $(document).on('click', '#showClick', showBar);
                 $('#display2').html(control.color + ' , ' + control.size);
             },
-            init: function() {
+            init: function () {
                 //console.log(this.color);
                 $('#aboutMenu').click(about.init);
                 $('#homeMenu').click(home.init);
@@ -48,9 +48,9 @@ define(['jquery', 'home', 'about', 'database',
         return control;
     });
 
-$(document).ready(function() {
+$(document).ready(function () {
     'use strict';
-    $('.navbar-nav li.trigger-collapse a').click(function(event) {
+    $('.navbar-nav li.trigger-collapse a').click(function (event) {
         $('.navbar-collapse').collapse('hide');
     });
 });

@@ -4,7 +4,7 @@ var Settings = require('../models/settings');
 var connect = require('./connect');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     'use strict';
     res.send('respond with a resource');
 });
@@ -22,7 +22,7 @@ function saveSettings(request, response) {
 
     console.log('inserting', newSettings.comment);
 
-    newSettings.save(function(err) {
+    newSettings.save(function (err) {
         //'use strict';
         console.log('saved: ', newSettings.dataSource, newSettings.dataType, newSettings.comment);
         response.send({
@@ -33,7 +33,7 @@ function saveSettings(request, response) {
     });
 }
 
-router.post('/updateSettings', function(request, response) {
+router.post('/updateSettings', function (request, response) {
     'use strict';
     console.log('request body', request.body);
     if (!connect.connected) {
@@ -42,7 +42,7 @@ router.post('/updateSettings', function(request, response) {
 
     Settings.findOne({
         keyNote: 'settings'
-    }, function(err, doc) {
+    }, function (err, doc) {
         //'use strict';
         console.log('findone', err, doc);
         if (err) {
@@ -62,7 +62,7 @@ router.post('/updateSettings', function(request, response) {
     });
 });
 
-router.get('/getSettings', function(request, response) {
+router.get('/getSettings', function (request, response) {
     'use strict';
     console.log('request body', request.body);
     if (!connect.connected) {
@@ -71,7 +71,7 @@ router.get('/getSettings', function(request, response) {
 
     Settings.findOne({
         keyNote: 'settings'
-    }, function(err, doc) {
+    }, function (err, doc) {
         //'use strict';
         console.log('findone', err, doc);
         if (err) {

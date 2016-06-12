@@ -20,9 +20,9 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery'], function($) {
+requirejs(['jquery'], function ($) {
     'use strict';
-    requirejs(['bootstrap', 'control'], function(bootstrap, control) {
+    requirejs(['bootstrap', 'control'], function (bootstrap, control) {
         control.init();
     });
 });

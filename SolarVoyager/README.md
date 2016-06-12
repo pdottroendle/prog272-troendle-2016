@@ -53,5 +53,15 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
  [express-start-test0]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Final2016.html
 
 note:
- sudo apt-get install mongodb
- fails Mlab used instead
+#! /bin/bash
+cd
+mkdir data
+echo 'mongod --bind_ip=127.0.0.1 --dbpath=data --nojournal --rest "$@"' > ~/mongod
+chmod a+x ~/mongod
+# mongod
+also create chmod 777 /data/db/ empty folders in the root
+
+note: this is what is used a lot:
+ define(function() {
+ 	return {};
+ })
