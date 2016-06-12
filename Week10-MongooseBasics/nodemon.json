@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["scientists.json", "**/components/**"]
+}

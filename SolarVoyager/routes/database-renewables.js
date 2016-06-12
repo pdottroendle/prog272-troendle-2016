@@ -22,7 +22,7 @@ router.get('/all-data', function(request, response) {
         //'use strict';
         console.log(data.length);
         console.log(data[0]);
-        allData = data;
+        var allData = data;
 
         allMongo.writeData('data/renewables.json', allData);
 

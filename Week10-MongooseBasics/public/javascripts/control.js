@@ -20,12 +20,10 @@ $(document).ready(function () {
             });
     }
 
-    var exsertUrl = '/emptyCollection';
+    var emptyUrl = '/emptyCollection';
 
-    function exsertCollection() {
-        // Assign handlers immediately after making the request,
-        // and remember the jqxhr object for this request
-        var jqxhr = $.get(exsertUrl, function (result) {  // change by ppt
+    function emptyCollection() {
+        var jqxhr = $.get(emptyUrl, function (result) {  // change by ppt
                 alert("success");
                 console.log('empty collection'); // JSON.stringify(result, null, 4));
             })
@@ -39,7 +37,7 @@ $(document).ready(function () {
     }
 
     $('#insertValidData').click(insertCollection);
-    $('#emptyCollection').click(exsertCollection);
+    $('#emptyCollection').click(emptyCollection);
 
     $("#getAll").click(function () {
         $.getJSON('/all-data', function (result) {

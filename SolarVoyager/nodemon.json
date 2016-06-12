@@ -1,4 +1,4 @@
 {
   "verbose": true,
-  "ignore": ["scientists.json", "**/components/**"]
+  "ignore": ["scientists.json", "data/renewables.json", "**/components/**"]
 }
