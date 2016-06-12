@@ -2,6 +2,7 @@ var express = require('express');
 var connect = require('./connect');
 var Scientists = require('../models/scientists');
 var fs = require('fs');
+var allData;
 var totalScientistsSaved = 0;
 
 function allMongo() {

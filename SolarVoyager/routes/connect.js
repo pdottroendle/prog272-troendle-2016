@@ -6,13 +6,13 @@ var connect = {
 
     simpleConnect: function() {
         'use strict';
-        var url = 'mongodb://127.0.0.1:27017/test';
+        var url = 'mongodb://127.0.0.1:27017/renew';
         connect.connected = true;
         mongoose.connect(url);
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
@@ -22,8 +22,8 @@ var connect = {
         connect.connected = true;
         var userName = 'p94100687'; // week 10
         var password = 'p94100687'; // week 10
-        var siteAndPort = 'ds011281.mlab.com:11281'; // week 10
-        var databaseName = 'prog272-troendle'; // week 10
+        var siteAndPort = 'ds019053.mlab.com:19053'; // week 10
+        var databaseName = 'prog272_troendle'; // week 10
         var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
         console.log(url);
         mongoose.connect(url);
@@ -32,7 +32,7 @@ var connect = {
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },

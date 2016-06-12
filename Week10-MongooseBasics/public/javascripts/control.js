@@ -1,26 +1,48 @@
-$(document).ready(function() { 'use strict';
+$(document).ready(function () {
+    'use strict';
     var insertUrl = '/insertValidCollection';
 
     function insertCollection() {
-        var jqxhr = $.post(insertUrl, function(result) {
-                alert( "success" );
+        // Assign handlers immediately after making the request,
+        // and remember the jqxhr object for this request
+        var jqxhr = $.get(insertUrl, function (result) {  // change by ppt
+                alert("success");
                 console.log(JSON.stringify(result, null, 4));
             })
-            .done(function() {
-                console.log( "second success" );
+            .done(function () {
+                console.log("second success");
             })
-            .fail(function() {
-                alert( "error" );
+            .fail(function () {
+                alert("error");
             })
-            .always(function() {
-                console.log( "finished" );
+            .always(function () {
+                console.log("finished");
+            });
+    }
+
+    var exsertUrl = '/emptyCollection';
+
+    function exsertCollection() {
+        // Assign handlers immediately after making the request,
+        // and remember the jqxhr object for this request
+        var jqxhr = $.get(exsertUrl, function (result) {  // change by ppt
+                alert("success");
+                console.log('empty collection'); // JSON.stringify(result, null, 4));
+            })
+            .done(function () {
+                console.log("second success");
+                alert("error");
+            })
+            .always(function () {
+                console.log("finished");
             });
     }
 
     $('#insertValidData').click(insertCollection);
+    $('#emptyCollection').click(exsertCollection);
 
-    $("#getAll").click(function() {
-        $.getJSON('/all-data', function(result) {
+    $("#getAll").click(function () {
+        $.getJSON('/all-data', function (result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
     });

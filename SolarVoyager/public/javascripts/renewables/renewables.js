@@ -1,17 +1,17 @@
 define(['jquery'], function($) {
     'use strict';
     var index = 0;
-    var useLocalDatabase = false; //week11
-    var routeType = useLocalDatabase ? 0 : 1;
+    var useDatabase  = false; //week11
+    var routeType = useDatabase  ? 0 : 1;
 
-    var routeTypes = ['/allRenewables', '/renewables/']; //week11
+    var renewableRoutes  = ['/allRenewables', '/renewables/']; //week11
 
     console.log('renewables.js');
 
     function getRenewable() {
         console.log('getRenewable called');
         //$.getJSON('/renewables/', function(response) {     //week11
-        $.getJSON(routeTypes[routeType], function(response) {
+        $.getJSON(renewableRoutes [routeType], function(response) {
                 console.log(response);
 
                 ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
@@ -48,7 +48,7 @@ define(['jquery'], function($) {
 
     function showRenewable(renewable) {
         //'use strict';
-        if (!useLocalDatabase) { // week10 Finals  - need the data from Mongoodb ??
+        if (!useDatabase ) { // week10 Finals  - need the data from Mongoodb ??
             var renewablex = getSimpleKeys(renewable); // the variable name is now distinguished by a separate name
             $('#yearView').html(renewablex.year); //.html is used instead of .val for the display
             $('#solarView').html(renewablex.solar);
