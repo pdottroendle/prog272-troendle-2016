@@ -1,11 +1,8 @@
-/**
- * Created by charlie on 6/5/16.
- */
 
 var express = require('express');
 //var router = express.Router();
 var connect = require('./connect');
-var Scientists = require('../models/scientists');
+var scientists = require('../models/scientists');
 var fs = require('fs');
 
 var allData;
@@ -21,12 +18,12 @@ function insertScientist(scientist, response) {
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newScientist = new Scientists({
-        'firstName': scientist.firstName,
-        'lastName': scientist.lastName,
-        'subject': scientist.subject,
-        'subjects': scientist.subjects,
-        'comments': scientist.comments
+    var newScientist = new scientists({
+        "firstName": scientist.firstName,
+        "lastName": scientist.lastName,
+        "subject": scientist.subject,
+        "subjects": scientist.subjects,
+        "comments": scientist.comments
     });
 
     console.log('inserting', newScientist.lastName);
@@ -43,8 +40,8 @@ function insertScientist(scientist, response) {
 }
 
 allMongo.writeData = function(fileName, data) {
-    var data0 = JSON.stringify(data, null, 4);
-    fs.writeFile(fileName, data, function(err, data0) {
+    var data = JSON.stringify(data, null, 4);
+    fs.writeFile(fileName, data, function(err, data) {
         if (err) throw(err);
         console.log('success writing file');
     });

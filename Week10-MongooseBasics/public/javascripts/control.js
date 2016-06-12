@@ -1,33 +1,27 @@
-(function() {
+$(document).ready(function() { 'use strict';
+    var insertUrl = '/insertValidCollection';
 
-    var app = angular.module('elfApp', []);
-
-    app.controller('MongoController', function($scope, $http) {
-
-
-        $scope.insertValidData = function() {
-            $http.get('/insertValidCollection').then(function(data) {
-                $scope.display = data;
-            }, function(err) {
-                console.log(err);
+    function insertCollection() {
+        var jqxhr = $.post(insertUrl, function(result) {
+                alert( "success" );
+                console.log(JSON.stringify(result, null, 4));
+            })
+            .done(function() {
+                console.log( "second success" );
+            })
+            .fail(function() {
+                alert( "error" );
+            })
+            .always(function() {
+                console.log( "finished" );
             });
-        };
+    }
 
-        $scope.emptyCollection = function() {
-            $http.get('/emptyCollection', {name: 'lincoln'}).then(function(data) {
-                $scope.display = data;
-            }, function(err) {
-                console.log(err);
-            });
-        };
+    $('#insertValidData').click(insertCollection);
 
-        $scope.getAll = function() {
-            $http.get('/all-data').then(function(data) {
-                $scope.allData = JSON.stringify(data, null, 4);
-            }, function(err) {
-                console.log(err);
-            });
-        };
+    $("#getAll").click(function() {
+        $.getJSON('/all-data', function(result) {
+            $('#display').html(JSON.stringify(result, null, 4));
+        })
     });
-
-})();
+});
