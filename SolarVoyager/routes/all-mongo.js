@@ -15,6 +15,14 @@ function insertRecord(record, response) {
     if (!connect.connected) {
         connect.doConnection();
     }
+    console.log('.......................1>>');
+    console.log(record.year);
+    console.log('.......................2>>');
+    console.log(record.Year);
+    console.log('.......................3>>');
+    console.log(record.renewables.year);
+    console.log('.......................4>>');
+    console.log(record);
     var newRecord = new Renewsables({ // constructor using uppercase (grunt)
         'Year': record.year,
         'Solar (quadrillion Btu)': record.solar,
