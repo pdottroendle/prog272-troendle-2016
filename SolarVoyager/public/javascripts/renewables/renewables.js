@@ -1,21 +1,23 @@
-define(['jquery'], function($) {
+define(['jquery', 'settings'], function($, settings) {
     'use strict';
+
     var index = 0;
-    var useDatabase = true; //Force to get the renewables  $('#dataType').val(response.settings.dataType);
-    var routeType = useDatabase ? 0 : 1;
+    //var useDatabase = true;
 
-    var renewableRoutes = ['/allRenewables/all-data', '/renewables/']; //week11
+    var routeType = settings.useDatabase ? 0 : 1;
 
-    console.log('renewables.js  xxxxxxxxxxxxxxxxxxxxxxx');
-    //console.log($('#dataType').val(response.settings.dataType));
+    //var renewableRoutes = ['/allRenewables/all-data', '/renewables/'];
+    var renewableRoutes = ['/allRenewables/', '/renewables/'];
+
+    console.log('renewables.js');
+
     function getRenewable() {
         console.log('getRenewable called');
-        //$.getJSON('/renewables/', function(response) {     //week11
         $.getJSON(renewableRoutes[routeType], function(response) {
                 console.log(response);
 
-                ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
-                showRenewable(ZZZZ.renewablesList[index]); //  cc < ==== HERE
+                ZZZZ.renewablesList = response.renewables;
+                showRenewable(ZZZZ.renewablesList[index]);
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
@@ -82,8 +84,8 @@ define(['jquery'], function($) {
     var ZZZZ = { // ppt < ==== needed a variable name that more distinctable than "renewables"
         color: 'display of the energy data',
         size: 'client side index, see on the bottom of the list',
-        renewablesList: [], //  cc < ==== HERE
-        getRenewable: getRenewable, //  cc < ==== HERE
+        renewablesList: [], //  its for the hard Test
+        getRenewable: getRenewable,
         init: function() {
             console.log(ZZZZ.color);
             $('#elf-view').load('/renewables/renewables-page', function() {
@@ -96,9 +98,7 @@ define(['jquery'], function($) {
                     value: -1
                 }, indexButtonChange);
                 $('#indexInput').change(buttonChange);
-                //$('#XXXX').change(function () { // ppt < ==  renamed for clarity purpose "renewables"
-                //    getRenewable();
-                //});  // ppt < ====== seemed not beeing used
+
                 getRenewable();
             });
         }

@@ -4,14 +4,16 @@ var settingsrenewables = require('../models/renewables');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    'use strict';
-    res.send('respond with a resource');
-    //res.render('index', { title: 'Week10-Finals-troendle'
-});
+/*
+ router.get('/', function(req, res, next) {
+ 'use strict';
+ res.send('respond with a resource');
+ //res.render('index', { title: 'Week10-Finals-troendle'
+ });
 
-router.get('/all-data', function(request, response) {
+ router.get('/all-data', function(request, response) {
+ */
+router.get('/', function(request, response) {
     'use strict';
     console.log('AllData route invoked.');
     if (!connect.connected) {

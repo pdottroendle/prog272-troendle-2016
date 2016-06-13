@@ -1,4 +1,4 @@
-define(function() {
+define(['settings'], function(settings) {
     'use strict';
 
     function getSettings() {
