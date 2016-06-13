@@ -89,7 +89,7 @@ define(['msnTypes'], function(msnTypes) {
     var energyTypes = {
         color: 'Green Energy Types',
         size: 'Energy Types Size',
-        //renewablesList: [],
+        renewablesList: [], // for the hardest test
         init: function() {
             console.log(energyTypes.color);
             $('#elf-view').load('/high-tech-energy/energy-types-page', function() {

@@ -25,8 +25,8 @@ router.get('/', function(request, response) {
 
 });
 
-//router.get('/ByIndex/:id', function(request, response) {
-router.get('http://example.com/ByIndex/:id', function(request, response) {
+router.get('/ByIndex/:id', function(request, response) {
+    //router.get('http://example.com/ByIndex/:id', function(request, response) {
     'use strict';
     console.log('/renewablesByIndex called', request.params.id);
 
@@ -44,7 +44,6 @@ router.get('http://example.com/ByIndex/:id', function(request, response) {
         }
     });
 });
-}
 
 router.get('/ByYear/:id', function(request, response) {
     'use strict';

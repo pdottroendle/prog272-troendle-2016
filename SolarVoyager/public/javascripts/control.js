@@ -39,7 +39,6 @@ define(['jquery', 'home', 'about', 'database',
                 $('#databaseButton').click(database.init);
                 $('#databaseMenu').click(database.init);
 
-
                 home.init();
                 //$('elf-view').load('/main', this.setup);
             }
