@@ -41,7 +41,7 @@ var connect = {
     },
 
     doConnection: function (useSimple) {
-        var connectType = useSimple || false;  // modification CC
+        var connectType = useSimple || true;  // modification CC
         if (connectType) {
             connect.simpleConnect();
         } else {

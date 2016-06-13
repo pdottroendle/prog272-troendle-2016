@@ -39,7 +39,7 @@ app.use(function(req, res, next) { 'use strict';
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) { 'use strict';
     res.status(err.status || 500);
-		console.log(err);
+    console.log(err);
     res.render('error', {
       message: err.message,
       error: err

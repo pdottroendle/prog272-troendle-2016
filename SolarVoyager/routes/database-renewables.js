@@ -55,6 +55,11 @@ router.get('/insertValidCollection', function (request, response) {
     allMongo.readDataAndInsert(response);
 });
 
+router.post('/insertValidCollection2', function (request, response) {
+    'use strict';
+    allMongo.readDataAndInsert(response);
+});
+
 router.get('/:id', function (request, response) {
     'use strict';
     response.render(request.params.id, {});

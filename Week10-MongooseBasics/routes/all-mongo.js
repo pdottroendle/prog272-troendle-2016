@@ -1,27 +1,33 @@
+/**
+ * Created by charlie on 6/5/16.
+ */
+
+
 var express = require('express');
+//var router = express.Router();
 var connect = require('./connect');
-var Scientists = require('../models/scientists');
+var scientists = require('../models/scientists');
 var fs = require('fs');
+
 var allData;
 var totalScientistsSaved = 0;
 
 function allMongo() {
-    'use strict';
+
 }
 
 allMongo.numberOfScientists = 0;
 
 function insertScientist(scientist, response) {
-    'use strict';
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newScientist = new Scientists({
-        'firstName': scientist.firstName,
-        'lastName': scientist.lastName,
-        'subject': scientist.subject,
-        'subjects': scientist.subjects,
-        'comments': scientist.comments
+    var newScientist = new scientists({
+        "firstName": scientist.firstName,
+        "lastName": scientist.lastName,
+        "subject": scientist.subject,
+        "subjects": scientist.subjects,
+        "comments": scientist.comments
     });
 
     console.log('inserting', newScientist.lastName);
@@ -31,38 +37,29 @@ function insertScientist(scientist, response) {
         console.log('saved: ', newScientist.lastName, allMongo.numberOfScientists, totalScientistsSaved);
 
         if (totalScientistsSaved === allMongo.numberOfScientists) {
-            response.send({
-                result: 'Success Saving Scientists',
-                totalSaved: totalScientistsSaved
-            });
+            //mongoose.disconnect();
+            response.send({result: 'Success'});
         }
     });
 }
 
 allMongo.writeData = function(fileName, data) {
-    'use strict';
-    var dataAsString = JSON.stringify(data, null, 4);
-    fs.writeFile(fileName, dataAsString, function(err, result) {
-        if (err) {
-            throw (err);
-        }
+    var data = JSON.stringify(data, null, 4);
+    fs.writeFile(fileName, data, function(err, data) {
+        if (err) throw(err);
         console.log('success writing file');
     });
-};
+}
 
 allMongo.readDataAndInsert = function(response) {
-    'use strict';
-    fs.readFile('ValidScientists.json', function(err, scientistsText) {
-        if (err) {
-            throw (err);
-        }
-        scientistsText = JSON.parse(scientistsText);
-        totalScientistsSaved = 0;
-        allMongo.numberOfScientists = scientistsText.length;
-        for (var i = 0; i < scientistsText.length; i++) {
-            insertScientist(scientistsText[i], response);
+    fs.readFile('ValidScientists.json', function(err, scientists) {
+        if (err) throw (err);
+        scientists = JSON.parse(scientists);
+        allMongo.numberOfScientists = scientists.length;
+        for (var i = 0; i < scientists.length; i++) {
+            insertScientist(scientists[i], response);
         }
     });
-};
+}
 
 module.exports = allMongo;

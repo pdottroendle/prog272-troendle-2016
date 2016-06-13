@@ -9,7 +9,8 @@ define(function () {
             //$('#dataType').val(response.settings.dataType);
             //$('#dataSource').val(response.settings.dataSource);
             //$('#comment').val(response.settings.comment);
-            $('#yearView').val(response.renewables.Year);
+                $('#yearView').val(response.renewables.Year);
+             var X =   $('#yearView').val(response.renewables.Year);
             $('#solarView').val(response.renewables['Solar (quadrillion Btu)']);
             $('#geoView').val(response.renewables['Geothermal (quadrillion Btu)']);
             $('#biomassView').val(response.renewables['Other biomass (quadrillion Btu)']);
@@ -17,7 +18,9 @@ define(function () {
             $('#liquidView').val(response.renewables['Liquid biofuels (quadrillion Btu)']);
             $('#woodView').val(response.renewables['Wood biomass (quadrillion Btu)']);
             $('#hydroView').val(response.renewables['Hydropower (quadrillion Btu)']);
-            alert("success");
+                console.log(X);
+                console.log('--------------------------------------------------------------');
+                alert("success");
             console.log(JSON.stringify(result, null, 4));
         })
             .done(function () {
@@ -85,7 +88,9 @@ define(function () {
                         wood: $('#woodView').val(),
                         hydro: $('#hydroView').val()
                     };
-                    $.post('/allRenewables/insertValidCollection', userData, function (result) {
+                    console.log($('#yearView').val());
+                    console.log('that is meant to be this : $(\'#yearView\').val()');
+                    $.post('/allRenewables/insertValidCollection2', userData, function (result) {
                     });
                 });
 
