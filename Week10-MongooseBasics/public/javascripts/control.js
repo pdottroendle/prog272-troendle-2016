@@ -1,19 +1,20 @@
-$(document).ready(function() { 'use strict';
+$(document).ready(function() {
+    'use strict';
     var insertUrl = '/insertValidCollection';
 
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function(result) {
-                alert( "success" );
+                alert('success');
                 console.log(JSON.stringify(result, null, 4));
             })
             .done(function() {
-                console.log( "second success" );
+                console.log('second success');
             })
             .fail(function() {
-                alert( "error" );
+                alert('error');
             })
             .always(function() {
-                console.log( "finished" );
+                console.log('finished');
             });
     }
 
@@ -22,13 +23,13 @@ $(document).ready(function() { 'use strict';
                 $('#display').html(JSON.stringify(result, null, 4));
             })
             .done(function() {
-                console.log( "second success" );
+                console.log('second success');
             })
             .fail(function() {
-                alert( "error" );
+                alert('error');
             })
             .always(function() {
-                console.log( "finished" );
+                console.log('finished');
             });
     }
 
@@ -37,17 +38,17 @@ $(document).ready(function() { 'use strict';
                 $('#display').html(JSON.stringify(result, null, 4));
             })
             .done(function() {
-                console.log( "second success" );
+                console.log('second success');
             })
             .fail(function() {
-                alert( "error" );
+                alert('error');
             })
             .always(function() {
-                console.log( "finished" );
+                console.log('finished');
             });
     }
 
     $('#insertValidData').click(insertCollection);
-    $("#getAll").click(getAll);
-    $("#emptyCollection").click(emptyCollection);
+    $('#getAll').click(getAll);
+    $('#emptyCollection').click(emptyCollection);
 });

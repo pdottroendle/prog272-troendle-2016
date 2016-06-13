@@ -8,19 +8,20 @@ var connect = {
 
     connected: false,
 
-    simpleConnect: function () {
+    simpleConnect: function() {
+        'use strict';
         var url = 'mongodb://127.0.0.1:27017/test';
         connect.connected = true;
         mongoose.connect(url);
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function (callback) {
+        db.once('open', function(callback) {
             connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
-    mlabConnect: function () {
+    mlabConnect: function() {
         'use strict';
         connect.connected = true;
         var userName = 'p94100687'; // week 10
@@ -34,14 +35,15 @@ var connect = {
         // This part is optional
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function (callback) {
+        db.once('open', function(callback) {
             connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
-    doConnection: function (useSimple) {
-        var connectType = useSimple || true;  // modification CC
+    doConnection: function(useSimple) {
+        'use strict';
+        var connectType = useSimple || true; // modification CC
         if (connectType) {
             connect.simpleConnect();
         } else {

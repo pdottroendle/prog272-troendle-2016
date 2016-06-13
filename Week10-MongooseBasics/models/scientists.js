@@ -5,7 +5,10 @@ var scientistsSchema = mongoose.Schema({
     'lastName': String,
     'subject': String,
     'subjects': [String],
-    comments: [{ body: String, date: Date }]
+    comments: [{
+        body: String,
+        date: Date
+    }]
 });
 
 module.exports = mongoose.model('scientists', scientistsSchema);
