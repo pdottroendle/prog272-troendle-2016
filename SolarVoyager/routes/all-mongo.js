@@ -1,6 +1,6 @@
 var express = require('express');
 var connect = require('./connect');
-var Renewsables = require('../models/renewables');
+var Renewables = require('../models/renewables');
 var fs = require('fs');
 var totalRecordsSaved = 0;
 
@@ -15,21 +15,24 @@ function insertRecord(record, response) {
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newRecord = new Renewsables({ // constructor using uppercase (grunt)
-        year : record['Year'],
-        solar: record['Solar (quadrillion Btu)'],
-        geo: record['Geothermal (quadrillion Btu)'],
-        biomass: record['Other biomass (quadrillion Btu)'],
-        wind: record['Wind power (quadrillion Btu)'],
-        liquid : record['Liquid biofuels (quadrillion Btu)'],
-        wood: record['Wood biomass (quadrillion Btu)'],
-        hydro: record['Hydropower (quadrillion Btu)']
-    });
-    console.log('inserting', newRecord.Year);
+    console.log('00000000000000000');
+    console.log(record.Year);
 
-    newRecord.save(function (err) {
+    var newRecord = new Renewables({ // constructor using uppercase (grunt)
+        'Year' : record.Year,
+        'Solar (quadrillion Btu)': record['Solar (quadrillion Btu)'],
+        'Geothermal (quadrillion Btu)': record['Geothermal (quadrillion Btu)'],
+        'Other biomass (quadrillion Btu)': record['Other biomass (quadrillion Btu)'],
+        'Wind power (quadrillion Btu)': record['Wind power (quadrillion Btu)'],
+        'Liquid biofuels (quadrillion Btu)' : record['Liquid biofuels (quadrillion Btu)'],
+        'Wood biomass (quadrillion Btu)': record['Wood biomass (quadrillion Btu)'],
+        'Hydropower (quadrillion Btu)': record['Hydropower (quadrillion Btu)']
+    });
+    console.log('inserting 1 of ', allMongo.numberOfRecords);
+
+    newRecord.save(function () {   //err
         totalRecordsSaved++;
-        console.log('saved: ', newRecord.year, allMongo.numberOfRecords, totalRecordsSaved);
+        console.log('saved: ', newRecord.Year, allMongo.numberOfRecords, totalRecordsSaved);
 
         if (totalRecordsSaved === allMongo.numberOfRecords) {
             response.send({
@@ -61,8 +64,8 @@ allMongo.readDataAndInsert = function (response) {
         }
         var recordsTextAsString = JSON.parse(recordsText);
         totalRecordsSaved = 0;
-        allMongo.numberOfRecords = recordsText.length ; //recordsTextAsString.length;
-        for (var i = 0; i < recordsText.length; i++) {
+        allMongo.numberOfRecords = recordsTextAsString.length ; //recordsTextAsString.length;
+        for (var i = 0; i < recordsTextAsString.length; i++) {
             insertRecord(recordsTextAsString[i], response);
         }
     });
