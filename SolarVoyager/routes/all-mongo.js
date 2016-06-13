@@ -15,25 +15,17 @@ function insertRecord(record, response) {
     if (!connect.connected) {
         connect.doConnection();
     }
-    console.log('.......................1>>');
-    console.log(record.year);
-    console.log('.......................2>>');
-    console.log(record.Year);
-    console.log('.......................3>>');
-    console.log(record.renewables.year);
-    console.log('.......................4>>');
-    console.log(record);
     var newRecord = new Renewsables({ // constructor using uppercase (grunt)
-        'Year': record.year,
-        'Solar (quadrillion Btu)': record.solar,
-        'Geothermal (quadrillion Btu)': record.geo,
-        'Other biomass (quadrillion Btu)': record.biomass,
-        'Wind power (quadrillion Btu)': record.wind,
-        'Liquid biofuels (quadrillion Btu)': record.liquid,
-        'Wood biomass (quadrillion Btu)': record.wood,
-        'Hydropower (quadrillion Btu)': record.hydro
+        year : record['Year'],
+        solar: record['Solar (quadrillion Btu)'],
+        geo: record['Geothermal (quadrillion Btu)'],
+        biomass: record['Other biomass (quadrillion Btu)'],
+        wind: record['Wind power (quadrillion Btu)'],
+        liquid : record['Liquid biofuels (quadrillion Btu)'],
+        wood: record['Wood biomass (quadrillion Btu)'],
+        hydro: record['Hydropower (quadrillion Btu)']
     });
-    console.log('inserting', newRecord.year);
+    console.log('inserting', newRecord.Year);
 
     newRecord.save(function (err) {
         totalRecordsSaved++;
