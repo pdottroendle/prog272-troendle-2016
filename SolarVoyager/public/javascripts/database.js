@@ -5,24 +5,18 @@ define(function () {
 
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function (result) {
-            $('#debug').html(JSON.stringify(response, null, 4));
-            //$('#dataType').val(response.settings.dataType);
-            //$('#dataSource').val(response.settings.dataSource);
-            //$('#comment').val(response.settings.comment);
-                $('#yearView').val(response.renewables.Year);
-             var X =   $('#yearView').val(response.renewables.Year);
-            $('#solarView').val(response.renewables['Solar (quadrillion Btu)']);
-            $('#geoView').val(response.renewables['Geothermal (quadrillion Btu)']);
-            $('#biomassView').val(response.renewables['Other biomass (quadrillion Btu)']);
-            $('#windView').val(response.renewables['Wind power (quadrillion Btu)']);
-            $('#liquidView').val(response.renewables['Liquid biofuels (quadrillion Btu)']);
-            $('#woodView').val(response.renewables['Wood biomass (quadrillion Btu)']);
-            $('#hydroView').val(response.renewables['Hydropower (quadrillion Btu)']);
-                console.log(X);
-                console.log('--------------------------------------------------------------');
+                $('#debug').html(JSON.stringify(response, null, 4));
+                $('#year').val(response.renewables.Year);
+                $('#solar').val(response.renewables['Solar (quadrillion Btu)']);
+                $('#geo').val(response.renewables['Geothermal (quadrillion Btu)']);
+                $('#biomass').val(response.renewables['Other biomass (quadrillion Btu)']);
+                $('#wind').val(response.renewables['Wind power (quadrillion Btu)']);
+                $('#liquid').val(response.renewables['Liquid biofuels (quadrillion Btu)']);
+                $('#wood').val(response.renewables['Wood biomass (quadrillion Btu)']);
+                $('#hydro').val(response.renewables['Hydropower (quadrillion Btu)']);
                 alert("success");
-            console.log(JSON.stringify(result, null, 4));
-        })
+                console.log(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log("second success");
             })
@@ -36,8 +30,8 @@ define(function () {
 
     function getAll() {
         $.getJSON('/allRenewables/all-data', function (result) {
-            $('#display').html(JSON.stringify(result, null, 4));
-        })
+                $('#display').html(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log("second success");
             })
@@ -51,8 +45,8 @@ define(function () {
 
     function emptyCollection() {
         $.getJSON('/allRenewables/emptyCollection', function (result) {
-            $('#display').html(JSON.stringify(result, null, 4));
-        })
+                $('#display').html(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log("second success");
             })
@@ -68,7 +62,6 @@ define(function () {
         init: function () {
             $('#elf-view').load('/database', function () {
 
-
                 $('#insertValidData').click(insertCollection);
                 $('#getAll').click(getAll);
                 $('#emptyCollection').click(emptyCollection);
@@ -79,18 +72,16 @@ define(function () {
                     var userFormData = $(this).serialize();
                     $('#debug').html(userFormData);
                     var userData = {
-                        year: $('#yearView').val(),
-                        solar: $('#solarView').val(),
-                        geo: $('#geoView').val(),
-                        biomass: $('#biomassView').val(),
-                        wind: $('#windView').val(),
-                        liquid: $('#liquidView').val(),
-                        wood: $('#woodView').val(),
-                        hydro: $('#hydroView').val()
+                        year: $('#year').val(),
+                        solar: $('#solar').val(),
+                        geo: $('#geo').val(),
+                        biomass: $('#biomass').val(),
+                        wind: $('#wind').val(),
+                        liquid: $('#liquid').val(),
+                        wood: $('#wood').val(),
+                        hydro: $('#hydro').val()
                     };
-                    console.log($('#yearView').val());
-                    console.log('that is meant to be this : $(\'#yearView\').val()');
-                    $.post('/allRenewables/insertValidCollection2', userData, function (result) {
+                    $.post('/allRenewables/insertValidCollection', userData, function (result) {
                     });
                 });
 

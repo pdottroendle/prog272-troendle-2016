@@ -25,7 +25,7 @@ router.get('/all-data', function (request, response) {
         console.log(allData[0]);
         var allData = allData;
 
-        allMongo.writeData('data/renewables.json', allData);
+        allMongo.writeData('data/Renewable.json', allData);
 
         response.send({
             result: 'Success',
@@ -51,11 +51,6 @@ router.get('/emptyCollection', function (request, response) {
 });
 
 router.get('/insertValidCollection', function (request, response) {
-    'use strict';
-    allMongo.readDataAndInsert(response);
-});
-
-router.post('/insertValidCollection2', function (request, response) {
     'use strict';
     allMongo.readDataAndInsert(response);
 });
