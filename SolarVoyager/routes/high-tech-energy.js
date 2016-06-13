@@ -6,11 +6,11 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-router.get('/', function (request, response) {
+router.get('/', function(request, response) {
     'use strict';
     console.log('/energy-overview called');
 
-    fs.readFile('data/HighTechEnergy.json', 'utf8', function (err, data) {
+    fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);
@@ -26,11 +26,11 @@ router.get('/', function (request, response) {
 
 });
 
-router.get('/:id', function (request, response) {
+router.get('/:id', function(request, response) {
     'use strict';
     console.log('/energy-types ByIndex/:id called', request.params.id);
 
-    fs.readFile('data/HighTechEnergy.json', 'utf8', function (err, data) {
+    fs.readFile('data/HighTechEnergy.json', 'utf8', function(err, data) {
         if (err) {
             // response.send(err, 404);
             response.status(404).send(err);

@@ -53,5 +53,8 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
  [express-start-test0]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Final2016.html
 
 note:
- sudo apt-get install mongodb
- fails Mlab used instead
+ npm install grunt-shell --save
+ is needed because grunt check complains otherwise:
+ $ grunt check
+ >> Local Npm module "grunt-shell" not found. Is it installed?
+ this solves it

@@ -1,5 +1,5 @@
 //define(['jquery'], function($) {
-define(['msnTypes'], function (msnTypes) {
+define(['msnTypes'], function(msnTypes) {
     'use strict';
     var index = 0;
     var renewablesList;
@@ -12,34 +12,34 @@ define(['msnTypes'], function (msnTypes) {
     function getHighTechEnergy() {
         console.log('getHighTechEnergy called');
         //$.getJSON('/high-tech-energy/ByIndex/' + index, function(response) {
-        $.getJSON('/high-tech-energy', function (response) {
-            console.log(response);
-            //showRenewable(response.renewables);
+        $.getJSON('/high-tech-energy', function(response) {
+                console.log(response);
+                //showRenewable(response.renewables);
 
-            renewablesList = response.renewables;
-            getEnergyTypes(renewablesList);
-            var msnTypesList = msnTypes(renewablesList);
-            $('#debug').html(JSON.stringify(msnTypes, null, 4));
-            displayMsnTypes(msnTypesList);
+                renewablesList = response.renewables;
+                getEnergyTypes(renewablesList);
+                var msnTypesList = msnTypes(renewablesList);
+                $('#debug').html(JSON.stringify(msnTypes, null, 4));
+                displayMsnTypes(msnTypesList);
 
-        })
-            .done(function () {
+            })
+            .done(function() {
                 console.log('second success');
             })
-            .fail(function (a, b, c) {
+            .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .always(function () {
+            .always(function() {
                 console.log('complete');
             });
     }
 
     function displayMsnTypes(msnTypesList) {
-        msnTypesList.forEach(function (msnType) {
+        msnTypesList.forEach(function(msnType) {
             $('#msnTypes').append('<li><a class="msnTypeHit">' + msnType.msn + ':' + msnType.description + '</a></li>');
         });
-        $('.msnTypeHit').click(function (event) {
+        $('.msnTypeHit').click(function(event) {
             alert(this.innerHTML);
         });
     }
@@ -76,12 +76,12 @@ define(['msnTypes'], function (msnTypes) {
         }
     }
 
-    var indexButtonChange = function (event) { // the user  +  or  - event is added or substracted to the value
+    var indexButtonChange = function(event) { // the user  +  or  - event is added or substracted to the value
         var test = event.data.value + index;
         indexChange(test);
     };
 
-    var buttonChange = function () {
+    var buttonChange = function() {
         var test = $('#indexInput').val(); // the default value or the user filled input is taken
         indexChange(parseInt(test));
     };
@@ -90,9 +90,9 @@ define(['msnTypes'], function (msnTypes) {
         color: 'Green Energy Types',
         size: 'Energy Types Size',
         //renewablesList: [],
-        init: function () {
+        init: function() {
             console.log(energyTypes.color);
-            $('#elf-view').load('/high-tech-energy/energy-types-page', function () {
+            $('#elf-view').load('/high-tech-energy/energy-types-page', function() {
                 $('#display').html(energyTypes.color);
                 $('#display2').html(energyTypes.size);
                 $('#plusButton').click({

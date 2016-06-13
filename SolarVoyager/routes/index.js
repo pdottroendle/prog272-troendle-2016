@@ -4,14 +4,14 @@ var router = express.Router();
 var energyUtils = require('../routes/energy-utils.js');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {
         title: 'Week10-Routes Solar Finals Troendle'
     });
 });
 
-router.get('/:id', function (request, response) {
+router.get('/:id', function(request, response) {
     'use strict';
     response.render(request.params.id, {
         title: 'ElfComponent'
