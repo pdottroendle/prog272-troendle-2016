@@ -4,7 +4,7 @@ var Settings = require('../models/settings');
 var connect = require('./connect');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/all-data', function(req, res, next) {
     'use strict';
     res.send('respond with a resource');
 });

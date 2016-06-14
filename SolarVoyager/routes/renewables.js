@@ -28,7 +28,7 @@ router.get('/', function(request, response) {
 router.get('/ByIndex/:id', function(request, response) {
     //router.get('http://example.com/ByIndex/:id', function(request, response) {
     'use strict';
-    console.log('/renewablesByIndex called', request.params.id);
+    console.log('/renewablesIndex called', request.params.id);
 
     fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {
@@ -47,7 +47,7 @@ router.get('/ByIndex/:id', function(request, response) {
 
 router.get('/ByYear/:id', function(request, response) {
     'use strict';
-    console.log('message /renewablesByYear called', request.params.id);
+    console.log('message /renewablesYear called', request.params.id);
 
     fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
         if (err) {

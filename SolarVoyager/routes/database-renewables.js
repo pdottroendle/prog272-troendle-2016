@@ -4,7 +4,6 @@ var settingsrenewables = require('../models/renewables');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
-/*
  router.get('/', function(req, res, next) {
  'use strict';
  res.send('respond with a resource');
@@ -12,8 +11,8 @@ var connect = require('./connect');
  });
 
  router.get('/all-data', function(request, response) {
- */
-router.get('/', function(request, response) {
+ 
+router.get('/all-data', function(request, response) {
     'use strict';
     console.log('AllData route invoked.');
     if (!connect.connected) {

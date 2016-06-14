@@ -7,7 +7,7 @@ define(['jquery', 'settings'], function($, settings) {
     var routeType = settings.useDatabase ? 0 : 1;
 
     //var renewableRoutes = ['/allRenewables/all-data', '/renewables/'];
-    var renewableRoutes = ['/allRenewables/', '/renewables/'];
+    var renewableRoutes = ['/allRenewables/all-data/', '/renewables/'];
 
     console.log('renewables.js');
 
