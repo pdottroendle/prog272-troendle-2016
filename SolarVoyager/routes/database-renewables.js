@@ -10,7 +10,7 @@ var connect = require('./connect');
  //res.render('index', { title: 'Week10-Finals-troendle'
  });
 
- router.get('/all-data', function(request, response) {
+// router.get('/all-data', function(request, response) {
  
 router.get('/all-data', function(request, response) {
     'use strict';

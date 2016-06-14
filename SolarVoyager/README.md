@@ -67,4 +67,5 @@ note: this is what is used a lot:
  })
 
 
- note: tests will be updated!!
+ note: tests will be updated!! 
+ cp -r ~/Git/JsObjects/Utilities/Templates/UnitTest/SolarVoyager/* .
