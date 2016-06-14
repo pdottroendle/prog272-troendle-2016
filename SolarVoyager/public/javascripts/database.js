@@ -6,14 +6,14 @@ define(function () {
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function (result) {
             $('#debug').html(JSON.stringify(result, null, 4));
-            $('#year').val(response.renewables.Year);
-            $('#solar').val(response.renewables['Solar (quadrillion Btu)']);
-            $('#geo').val(response.renewables['Geothermal (quadrillion Btu)']);
-            $('#biomass').val(response.renewables['Other biomass (quadrillion Btu)']);
-            $('#wind').val(response.renewables['Wind power (quadrillion Btu)']);
-            $('#liquid').val(response.renewables['Liquid biofuels (quadrillion Btu)']);
-            $('#wood').val(response.renewables['Wood biomass (quadrillion Btu)']);
-            $('#hydro').val(response.renewables['Hydropower (quadrillion Btu)']);
+            $('#year').val(result.renewables.Year);
+            $('#solar').val(result.renewables['Solar (quadrillion Btu)']);
+            $('#geo').val(result.renewables['Geothermal (quadrillion Btu)']);
+            $('#biomass').val(result.renewables['Other biomass (quadrillion Btu)']);
+            $('#wind').val(result.renewables['Wind power (quadrillion Btu)']);
+            $('#liquid').val(result.renewables['Liquid biofuels (quadrillion Btu)']);
+            $('#wood').val(result.renewables['Wood biomass (quadrillion Btu)']);
+            $('#hydro').val(result.renewables['Hydropower (quadrillion Btu)']);
             alert('success');
             console.log(JSON.stringify(result, null, 4));
         })
