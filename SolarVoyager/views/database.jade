@@ -3,7 +3,7 @@
         h1 Database Page
 
     .panel.panel-default
-        .panel-heading Renewable
+        .panel-heading Database
         .panel-body
             //form#target(method='post', action='/bar')
                 select#dataType(name='dataType')
@@ -18,14 +18,11 @@
                 hr
                 input.btn.btn-success(type="submit", value='Submit')
 
-    .panel.panel-default
-        .panel-heading Renewable
-        .panel-body
 
 
-                                button#insertValidData Insert Valid Data
-                                button#getAll Get All
-                                button#emptyCollection Empty Collection
+            button#insertValidData Insert Valid Data
+            button#getAll Get All
+            button#emptyCollection Empty Collection
 
             .alert.alert-info
                 pre#debug

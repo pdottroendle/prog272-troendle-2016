@@ -16,8 +16,8 @@ define(['jquery', 'settings'], function($, settings) {
         $.getJSON(renewableRoutes[routeType], function(response) {
                 console.log(response);
 
-                ZZZZ.renewablesList = response.renewables;
-                showRenewable(ZZZZ.renewablesList[index]);
+                renewables.renewablesList = response.renewables;
+                showRenewable(renewables.renewablesList[index]);
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
@@ -67,7 +67,7 @@ define(['jquery', 'settings'], function($, settings) {
         if (test < 12 && test >= 0) {
             index = test;
             $('#indexInput').val(index); // the value is send back to the field
-            showRenewable(ZZZZ.renewablesList[index]);
+            showRenewable(renewables.renewablesList[index]);
         }
     }
 
@@ -81,16 +81,16 @@ define(['jquery', 'settings'], function($, settings) {
         indexChange(parseInt(test));
     };
 
-    var ZZZZ = { // ppt < ==== needed a variable name that more distinctable than "renewables"
+    var renewables = {
         color: 'display of the energy data',
         size: 'client side index, see on the bottom of the list',
         renewablesList: [], //  its for the hard Test
-        getRenewable: getRenewable,
+        getRenewable: getRenewable, //  its for the hard Test
         init: function() {
-            console.log(ZZZZ.color);
+            console.log(renewables.color);
             $('#elf-view').load('/renewables/renewables-page', function() {
-                $('#display').html(ZZZZ.color);
-                $('#display2').html(ZZZZ.size);
+                $('#display').html(renewables.color);
+                $('#display2').html(renewables.size);
                 $('#plusButton').click({
                     value: +1
                 }, indexButtonChange); // note the list has a descending order
@@ -104,5 +104,5 @@ define(['jquery', 'settings'], function($, settings) {
         }
 
     };
-    return ZZZZ;
+    return renewables;
 });

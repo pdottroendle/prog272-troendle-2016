@@ -6,11 +6,13 @@
         .panel-heading Renewable
         .panel-body
             form#target(method='post', action='/bar')
-                select#dataType(name='dataType')
+                //select#dataType(name='dataType')
+                select.form-control#dataType(name='dataType')
                     option Database
                     option JSON
                 hr
-                select#dataSource(name='dataSource')
+                //select#dataSource(name='dataSource')
+                select.form-control#dataType(name='dataType')
                     option Local MongoDb
                     option MLab
                 hr
@@ -22,10 +24,5 @@
         .panel-heading Renewable
         .panel-body
 
-
-                               // button#insertValidData Insert Valid Data
-                                  button#getAll Get All
-                                  button#emptyCollection Empty Collection
-
-            .alert.alert-info
-                pre#debug
+        .alert.alert-info
+            pre#debug

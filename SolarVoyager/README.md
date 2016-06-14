@@ -65,3 +65,6 @@ note: this is what is used a lot:
  define(function() {
  	return {};
  })
+
+
+ note: tests will be updated!!
