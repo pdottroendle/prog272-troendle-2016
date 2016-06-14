@@ -6,14 +6,14 @@ define(function () {
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function (result) {
             $('#debug').html(JSON.stringify(result, null, 4));
-            $('#year').val(result.renewables.Year);
-            $('#solar').val(result.renewables['Solar (quadrillion Btu)']);
-            $('#geo').val(result.renewables['Geothermal (quadrillion Btu)']);
-            $('#biomass').val(result.renewables['Other biomass (quadrillion Btu)']);
-            $('#wind').val(result.renewables['Wind power (quadrillion Btu)']);
-            $('#liquid').val(result.renewables['Liquid biofuels (quadrillion Btu)']);
-            $('#wood').val(result.renewables['Wood biomass (quadrillion Btu)']);
-            $('#hydro').val(result.renewables['Hydropower (quadrillion Btu)']);
+            $('#year').val(result.Year);
+            $('#solar').val(result['Solar (quadrillion Btu)']);
+            $('#geo').val(result['Geothermal (quadrillion Btu)']);
+            $('#biomass').val(result['Other biomass (quadrillion Btu)']);
+            $('#wind').val(result['Wind power (quadrillion Btu)']);
+            $('#liquid').val(result['Liquid biofuels (quadrillion Btu)']);
+            $('#wood').val(result['Wood biomass (quadrillion Btu)']);
+            $('#hydro').val(result['Hydropower (quadrillion Btu)']);
             alert('success');
             console.log(JSON.stringify(result, null, 4));
         })
@@ -29,7 +29,6 @@ define(function () {
     }
 
     function getAll() {
-        //$.getJSON('/allRenewables/all-data', function(result) {
         $.getJSON('/allRenewables/', function (result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
