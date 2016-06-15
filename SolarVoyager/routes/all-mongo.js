@@ -2,6 +2,8 @@ var express = require('express');
 var connect = require('./connect');
 var Renewables = require('../models/renewables');
 var fs = require('fs');
+
+var allData;
 var totalRecordsSaved = 0;
 
 function allMongo() {
@@ -30,7 +32,7 @@ function insertRecord(record, response) {
     });
     console.log('inserting 1 of ', allMongo.numberOfRecords);
 
-    newRecord.save(function() { //err
+    newRecord.save(function(err) { 
         totalRecordsSaved++;
         console.log('saved: ', newRecord.Year, allMongo.numberOfRecords, totalRecordsSaved);
 
@@ -61,7 +63,7 @@ allMongo.readDataAndInsert = function(response) {
             throw (err);
         }
         var recordsTextAsString = JSON.parse(recordsText);
-        totalRecordsSaved = 0;
+        //totalRecordsSaved = 0;  ??????????????????????
         allMongo.numberOfRecords = recordsTextAsString.length; //recordsTextAsString.length;
         for (var i = 0; i < recordsTextAsString.length; i++) {
             insertRecord(recordsTextAsString[i], response);

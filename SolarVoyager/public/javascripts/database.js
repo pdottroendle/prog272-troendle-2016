@@ -22,7 +22,6 @@ define(function () {
             })
             .fail(function () {
                 alert('error');
-                $('#debug').html('insertCollection error occured: ', a.status);
             })
             .always(function () {
                 console.log('finished');
@@ -53,7 +52,6 @@ define(function () {
             })
             .fail(function () {
                 alert('error');
-                $('#debug').html('emptyCollection error occured: ', a.status);
             })
             .always(function () {
                 console.log('finished');
@@ -84,7 +82,6 @@ define(function () {
                     };
                     console.log(userFormData);
                     $.post('/allRenewables/insertValidCollection', userData, function (result) {
-                    $('#debug').html(JSON.stringify(result, null, 4));
                     });
                 });
 
