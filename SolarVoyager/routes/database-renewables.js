@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var modelrenewables = require('../models/renewables');
+var modelRenewables = require('../models/renewables');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
@@ -19,7 +19,7 @@ router.get('/all-data', function(request, response) {
     }
 
     console.log('About to find renewables.');
-    modelrenewables.find({}, function(err, data) {
+    modelRenewables.find({}, function(err, data) {
         console.log(data.length);
         console.log(data[0]);
         var allData = data;
@@ -35,7 +35,7 @@ router.get('/all-data', function(request, response) {
 
 router.get('/emptyCollection', function(request, response) {
     'use strict';
-    modelrenewables.remove({}, function(err) {
+    modelRenewables.remove({}, function(err) {
         if (err) {
             response.send({
                 result: 'err',
