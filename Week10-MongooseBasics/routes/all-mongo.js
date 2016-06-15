@@ -1,8 +1,3 @@
-/**
- * Created by charlie on 6/5/16.
- * Updated by ppt
- */
-
 var express = require('express');
 //var router = express.Router();
 var connect = require('./connect');
