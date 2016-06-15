@@ -7,10 +7,9 @@ var bodyParser = require('body-parser');
 
 var databaseSettings = require('./routes/database-settings');
 var databaseRenewables = require('./routes/database-renewables');
-var routes = require('./routes/index');
 var highTechEnergy = require('./routes/high-tech-energy'); // week09
 var renewables = require('./routes/renewables'); // week09
-
+var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
