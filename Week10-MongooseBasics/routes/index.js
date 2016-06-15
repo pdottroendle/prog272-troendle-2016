@@ -13,30 +13,6 @@ router.get('/', function(req, res, next) {
     });
 });
 
-
-var connected = false;
-
-router.get('/all-data', function(request, response) {
-    console.log("AllData route invoked.");
-    if (!connect.connected) {
-        connect.doConnection();
-    }
-
-    console.log("About to find scientists.");
-    scientists.find({}, function(err, data) {
-        console.log(data.length);
-        console.log(data[0]);
-        allData = data;
-
-        allMongo.writeData('scientists.json', allData);
-
-        response.send({
-            result: 'Success',
-            allData: data
-        });
-    });
-});
-/*
 var connected = false;
 
 router.get('/all-data', function(request, response) {
@@ -50,7 +26,7 @@ router.get('/all-data', function(request, response) {
     scientists.find({}, function(err, data) {
         console.log(data.length);
         console.log(data[0]);
-        allData = data;
+        var allData = data;
 
         allMongo.writeData('scientists.json', allData);
 
@@ -60,7 +36,7 @@ router.get('/all-data', function(request, response) {
         });
     });
 });
-*/
+
 router.get('/emptyCollection', function(request, response) {
     'use strict';
     if (!connect.connected) {
