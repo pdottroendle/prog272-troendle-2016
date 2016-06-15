@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var settingsrenewables = require('../models/renewables');
+var modelrenewables = require('../models/renewables');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
@@ -11,7 +11,6 @@ var connect = require('./connect');
  });
 
 // router.get('/all-data', function(request, response) {
- 
 router.get('/all-data', function(request, response) {
     'use strict';
     console.log('AllData route invoked.');
@@ -20,24 +19,23 @@ router.get('/all-data', function(request, response) {
     }
 
     console.log('About to find renewables.');
-    settingsrenewables.find({}, function(err, allData) {
-        //'use strict';
-        console.log(allData.length);
-        console.log(allData[0]);
-        //var allData = allData;
+    modelrenewables.find({}, function(err, data) {
+        console.log(data.length);
+        console.log(data[0]);
+        var allData = data;
 
-        allMongo.writeData('data/Renewable.json', allData);
+        allMongo.writeData('renewables.json', allData);
 
         response.send({
             result: 'Success',
-            allData: allData
+            allData: data
         });
     });
 });
 
 router.get('/emptyCollection', function(request, response) {
     'use strict';
-    settingsrenewables.remove({}, function(err) {
+    modelrenewables.remove({}, function(err) {
         if (err) {
             response.send({
                 result: 'err',

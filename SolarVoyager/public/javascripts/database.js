@@ -22,6 +22,7 @@ define(function () {
             })
             .fail(function () {
                 alert('error');
+                $('#debug').html('insertCollection error occured: ', a.status);
             })
             .always(function () {
                 console.log('finished');
@@ -29,8 +30,8 @@ define(function () {
     }
 
     function getAll() {
-        $.getJSON('/allRenewables/', function (result) {
-            $('#display').html(JSON.stringify(result, null, 4));
+        $.getJSON('/allRenewables/all-data', function (result) {
+            $('#debug').html(JSON.stringify(result, null, 4));
         })
             .done(function () {
                 console.log('second success');
@@ -45,13 +46,14 @@ define(function () {
 
     function emptyCollection() {
         $.getJSON('/allRenewables/emptyCollection', function (result) {
-            $('#display').html(JSON.stringify(result, null, 4));
+            $('#debug').html(JSON.stringify(result, null, 4));
         })
             .done(function () {
                 console.log('second success');
             })
             .fail(function () {
                 alert('error');
+                $('#debug').html('emptyCollection error occured: ', a.status);
             })
             .always(function () {
                 console.log('finished');
@@ -80,7 +82,9 @@ define(function () {
                         wood: $('#wood').val(),
                         hydro: $('#hydro').val()
                     };
+                    console.log(userFormData);
                     $.post('/allRenewables/insertValidCollection', userData, function (result) {
+                    $('#debug').html(JSON.stringify(result, null, 4));
                     });
                 });
 

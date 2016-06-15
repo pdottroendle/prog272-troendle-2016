@@ -39,6 +39,7 @@ define(['settings'], function(settings) {
                         comment: $('#comment').val()
                     };
                     $.post('/databaseSettings/updateSettings', userData, function(result) {
+                        $('#debug').html(JSON.stringify(result, null, 4));
                         console.log(settings);
                     });
                 });

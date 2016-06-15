@@ -5,20 +5,6 @@
     .panel.panel-default
         .panel-heading Database
         .panel-body
-            //form#target(method='post', action='/bar')
-                select#dataType(name='dataType')
-                    option Database
-                    option JSON
-                hr
-                select#dataSource(name='dataSource')
-                    option Local MongoDb
-                    option MLab
-                hr
-                input#comment(type="text", name='comment' value='enter a value here')
-                hr
-                input.btn.btn-success(type="submit", value='Submit')
-
-
 
             button#insertValidData Insert Valid Data
             button#getAll Get All
@@ -26,3 +12,5 @@
 
             .alert.alert-info
                 pre#debug
+            .alert.alert-info
+                pre#display
