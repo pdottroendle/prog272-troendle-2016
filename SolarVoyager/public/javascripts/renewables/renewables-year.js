@@ -75,7 +75,7 @@ define(['jquery'], function ($) {
     };
 
     var ZZZZ = { // ppt < ==== needed a variable name that more distinctable than "renewables"
-        color: 'display of the energy data',
+        color: 'display of the renewable data',
         size: 'server side indexed (GET /:id )',
         renewablesList: [], //  cc < ==== HERE
         getRenewable: getRenewable, //  cc < ==== HERE

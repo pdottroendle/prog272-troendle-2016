@@ -1,47 +1,82 @@
+//define(['jquery'], function($) {
+/*
+ define(['msnTypes'], function(msnTypes) {
+ 'use strict';
+ var renewablesList;
+ function getEnergyTypes(renewables) {
+ }
+ function getHighTechEnergy() {
+ console.log('getHighTechEnergy called');
+ $.getJSON('/high-tech-energy', function(response) {
+ console.log(response);
+ renewablesList = response.renewables;
+ getEnergyTypes(renewablesList);
+ var msnTypesList = msnTypes(renewablesList);
+ // $('#debug').html(JSON.stringify(msnTypes, null, 4));
+ displayMsnTypes(msnTypesList);
+ })
+ .done(function() {
+ console.log('second success');
+ })
+ .fail(function(a, b, c) {
+ console.log('Error', a, b, c);
+ $('#debug').html('Error occured: ', a.status);
+ })
+ .always(function() {
+ console.log('complete');
+ });
+ }
+ function displayMsnTypes(msnTypesList) {
+ msnTypesList.forEach(function(msnType) {
+ $('#msnTypes').append('<li><a class="msnTypeHit">' + msnType.msn + ':' + msnType.description + '</a></li>');
+ });
+ $('.msnTypeHit').click(function(event) {
+ alert(this.innerHTML);
+ });
+ }
+ var energyTypes = {
+ color: 'Green Energy Types',
+ size: 'Energy Types Size',
+ init: function() {
+ console.log(energyTypes.color);
+ $('#elf-view').load('/high-tech-energy/energy-types-page', function() {
+ $('#display').html(energyTypes.color);
+ $('#display2').html(energyTypes.size);
+ getHighTechEnergy();
+ });
+ }
+ };
+ return energyTypes;
+ });
+ */
+
 define(['jquery'], function($) {
-//define(['msnTypes'], function(msnTypes) {
     'use strict';
     var index = 0;
-    var renewablesList;
     console.log('renewables.js');
 
-    function getEnergyTypes(renewables) {
+    function getRenewable() {
+        console.log('getRenewable called');
 
-    }
-
-    function getHighTechEnergy() {
-        console.log('getHighTechEnergy called');
-        //$.getJSON('/high-tech-energy/ByIndex/' + index, function(response) {
-        $.getJSON('/high-tech-energy', function(response) {
+        $.getJSON('/high-tech-energy/ByIndex/' + index, function(response) {
                 console.log(response);
-                //showRenewable(response.renewables);
 
-                renewablesList = response.renewables;
-                getEnergyTypes(renewablesList);
-                var msnTypesList = msnTypes(renewablesList);
-                $('#debug').html(JSON.stringify(msnTypes, null, 4));
-                displayMsnTypes(msnTypesList);
+                //ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
+                //showRenewable(ZZZZ.renewablesList[index]); //  cc < ==== HERE
+                showRenewable(response.renewables);
 
-            })
-            .done(function() {
-                console.log('second success');
+                $('#debug').html(JSON.stringify(response, null, 4));
             })
             .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
+            .done(function() {
+                console.log('second success');
+            })
             .always(function() {
                 console.log('complete');
             });
-    }
-
-    function displayMsnTypes(msnTypesList) {
-        msnTypesList.forEach(function(msnType) {
-            $('#msnTypes').append('<li><a class="msnTypeHit">' + msnType.msn + ':' + msnType.description + '</a></li>');
-        });
-        $('.msnTypeHit').click(function(event) {
-            alert(this.innerHTML);
-        });
     }
 
     function getSimpleKeys(renewable) {
@@ -72,6 +107,7 @@ define(['jquery'], function($) {
         if (test < 7009 && test >= 0) {
             index = test;
             $('#indexInput').val(index); // the value is send back to the field
+            // showRenewable(ZZZZ.renewablesList[index]);
             getRenewable();
         }
     }
@@ -86,15 +122,16 @@ define(['jquery'], function($) {
         indexChange(parseInt(test));
     };
 
-    var energyTypes = {
-        color: 'Green Energy Types',
-        size: 'Energy Types Size',
-        renewablesList: [], // for the hardest test
+    var ZZZZ = { // ppt < ==== needed a variable name that more distinctable than "renewables"
+        color: 'display of the energy data',
+        size: 'server side indexed (GET /:id )',
+        renewablesList: [], //  cc < ==== HERE
+        getRenewable: getRenewable, //  cc < ==== HERE
         init: function() {
-            console.log(energyTypes.color);
+            console.log(ZZZZ.color);
             $('#elf-view').load('/high-tech-energy/energy-types-page', function() {
-                $('#display').html(energyTypes.color);
-                $('#display2').html(energyTypes.size);
+                $('#display').html(ZZZZ.color);
+                $('#display2').html(ZZZZ.size);
                 $('#plusButton').click({
                     value: +1
                 }, indexButtonChange); // note the list has a descending order
@@ -102,10 +139,13 @@ define(['jquery'], function($) {
                     value: -1
                 }, indexButtonChange);
                 $('#indexInput').change(buttonChange);
-                getHighTechEnergy();
+                //$('#XXXX').change(function () {     // ppt < ==  renamed for clarity purpose "renewables"
+                //    getRenewable();
+                //});                  // ppt < ====== seemed not beeing used
+                getRenewable();
             });
         }
 
     };
-    return energyTypes;
+    return ZZZZ;
 });
