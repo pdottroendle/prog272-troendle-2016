@@ -16,10 +16,10 @@ var connect = {
             console.log('Opened connection to mongo');
         });
     },
-    // mongodb://<dbuser>:<dbpassword>@ds011281.mlab.com:11281/prog272-troendle
+    
     mlabConnect: function () {
         'use strict';
-        \\ds019053.mlab.com:19053/prog272_troendle
+        //ds019053.mlab.com:19053/prog272_troendle
         connect.connected = true;
         var userName = 'p94100687'; // week 10
         var password = 'p94100687'; // week 10
