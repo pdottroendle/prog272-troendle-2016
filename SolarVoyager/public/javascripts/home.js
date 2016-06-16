@@ -7,7 +7,18 @@ define(['settings'], function(settings) {
                 $('#dataType').val(response.settings.dataType);
                 $('#dataSource').val(response.settings.dataSource);
                 $('#comment').val(response.settings.comment);
-                settings.setSettings(response.settings);
+
+                //var settings2 = {
+                //    dataType: 'Database',
+                //    dataSource: 'Local MongoDb',
+                //    comment: 'Default Comment'
+                //};
+                //settings.setSettings({
+                //    dataType: 'Database',
+                //    dataSource: 'Local MongoDb',
+                //    comment: 'Default Comment'
+                // });
+
             })
             .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
@@ -38,7 +49,7 @@ define(['settings'], function(settings) {
                         dataType: $('#dataType').val(),
                         dataSource: $('#dataSource').val(),
                         comment: $('#comment').val()
-                     };
+                    };
                     $.get('/databaseSettings/updateSettings', userData, function(result) {
                         console.log(settings);
                     });

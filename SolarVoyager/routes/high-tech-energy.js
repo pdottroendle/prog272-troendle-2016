@@ -1,7 +1,3 @@
-/**
- * Created by bcuser on 6/1/16.
- */
-
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
@@ -26,7 +22,7 @@ router.get('/', function(request, response) {
 
 });
 
-router.get('/:id', function(request, response) {
+router.get('/ByIndex/:id', function(request, response) {
     'use strict';
     console.log('/energy-types ByIndex/:id called', request.params.id);
 
@@ -45,14 +41,12 @@ router.get('/:id', function(request, response) {
     });
 });
 
-/*
- router.get('/:id', function(request, response) {
- 'use strict';
- console.log('/energy-types :id called');
- response.render('high-tech-energy/' + request.params.id, {
- title: 'ElfComponent'
- });
- });
- */
+router.get('/:id', function(request, response) {
+    'use strict';
+    console.log('/energy-types :id called');
+    response.render('high-tech-energy/' + request.params.id, {
+        title: 'ElfComponent'
+    });
+});
 
 module.exports = router;

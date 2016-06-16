@@ -1,4 +1,3 @@
-//define(['jquery'], function($) {
 /*
  define(['msnTypes'], function(msnTypes) {
  'use strict';
