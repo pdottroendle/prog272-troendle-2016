@@ -1,21 +1,21 @@
-define(['settings'], function (settings) {
+define(['settings'], function(settings) {
     'use strict';
 
     function getSettings() {
-        $.getJSON('/databaseSettings/getSettings', function (response) {
+        $.getJSON('/databaseSettings/getSettings', function(response) {
                 $('#debug').html(JSON.stringify(response, null, 4));
                 $('#dataType').val(response.settings.dataType);
                 $('#dataSource').val(response.settings.dataSource);
                 $('#comment').val(response.settings.comment);
             })
-            .fail(function (a, b, c) {
+            .fail(function(a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .done(function () {
+            .done(function() {
                 console.log('second success');
             })
-            .always(function () {
+            .always(function() {
                 console.log('complete');
             });
     }
@@ -23,13 +23,13 @@ define(['settings'], function (settings) {
     var home = {
         color: 'red',
         size: 'big',
-        init: function () {
+        init: function() {
             console.log(home.color);
-            $('#elf-view').load('/home', function () {
+            $('#elf-view').load('/home', function() {
                 $('#display').html(home.color);
                 $('#display2').html(home.size);
                 getSettings();
-                $('#target').submit(function (event) {
+                $('#target').submit(function(event) {
                     event.preventDefault();
                     var userFormData = $(this).serialize();
                     $('#debug').html(userFormData);
@@ -38,8 +38,7 @@ define(['settings'], function (settings) {
                         dataSource: $('#dataSource').val(),
                         comment: $('#comment').val()
                     };
-                    $.post('/databaseSettings/updateSettings', userData, function (result) {
-                        $('#debug').html(JSON.stringify(result, null, 4));
+                    $.get('/databaseSettings/updateSettings', userData, function(result) {
                         console.log(settings);
                     });
                 });

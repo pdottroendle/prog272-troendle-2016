@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 // var fs = require('fs');    week09
-var energyUtils = require('../routes/energy-utils.js');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

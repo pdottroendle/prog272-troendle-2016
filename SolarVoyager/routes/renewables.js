@@ -4,6 +4,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var energyUtils = require('../routes/energy-utils.js');
 
 router.get('/', function (request, response) {
     'use strict';

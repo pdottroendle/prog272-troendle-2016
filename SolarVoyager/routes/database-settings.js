@@ -33,7 +33,7 @@ function saveSettings(request, response) {
     });
 }
 
-router.post('/updateSettings', function (request, response) {
+router.get('/updateSettings', function (request, response) {
     'use strict';
     console.log('request body', request.body);
     if (!connect.connected) {

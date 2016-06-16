@@ -3,26 +3,25 @@
         h1 Home Page
 
     .panel.panel-default
-        .panel-heading Renewable
+        .panel-heading Settings
         .panel-body
             form#target(method='post', action='/bar')
-                //select#dataType(name='dataType')
+                p Renewable data from the database or local JSON
                 select.form-control#dataType(name='dataType')
                     option Database
                     option JSON
                 hr
-                //select#dataSource(name='dataSource')
-                select.form-control#dataType(name='dataType')
+                p database on current server or remote Mlab
+                select.form-control#dataSource(name='dataSource')
                     option Local MongoDb
                     option MLab
                 hr
-                input#comment(type="text", name='comment' value='enter a value here')
+                input#comment(type="text", name='comment' value='foo')
                 hr
                 input.btn.btn-success(type="submit", value='Submit')
 
     .panel.panel-default
         .panel-heading Renewable
         .panel-body
-
-        .alert.alert-info
-            pre#debug
+            .alert.alert-info
+                pre#debug

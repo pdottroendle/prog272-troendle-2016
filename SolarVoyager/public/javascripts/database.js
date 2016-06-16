@@ -1,5 +1,10 @@
-define(function () {
+define(['jquery', 'settings'], function ($, settings) {
     'use strict';
+    var routeType = settings.useDatabase ? 0 : 1;
+console.log(routeType, ' --> is the selected routeType');
+
+//define(function () {
+//    'use strict';
 
     var insertUrl = '/allRenewables/insertValidCollection';
 

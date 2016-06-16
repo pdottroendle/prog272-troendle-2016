@@ -8,7 +8,7 @@ define(['jquery', 'settings'], function ($, settings) {
 
     //var renewableRoutes = ['/allRenewables/all-data', '/renewables/'];
     var renewableRoutes = ['/allRenewables/all-data/', '/renewables/'];
-
+    console.log('the route type 1:renewables 0:allRenewables/all-data is ----> ',routeType);
     console.log('renewables.js');
 
     function getRenewable() {
