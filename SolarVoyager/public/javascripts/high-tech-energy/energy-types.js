@@ -1,5 +1,5 @@
-//define(['jquery'], function($) {
-define(['msnTypes'], function(msnTypes) {
+define(['jquery'], function($) {
+//define(['msnTypes'], function(msnTypes) {
     'use strict';
     var index = 0;
     var renewablesList;
