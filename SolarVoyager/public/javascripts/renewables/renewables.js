@@ -1,4 +1,4 @@
-define(['jquery', 'settings'], function($, settings) {
+define(['jquery', 'settings'], function ($, settings) {
     'use strict';
 
     var index = 0;
@@ -13,7 +13,7 @@ define(['jquery', 'settings'], function($, settings) {
 
     function getRenewable() {
         console.log('getRenewable called');
-        $.getJSON(renewableRoutes[routeType], function(response) {
+        $.getJSON(renewableRoutes[routeType], function (response) {
                 console.log(response);
 
                 renewables.renewablesList = response.renewables;
@@ -21,14 +21,14 @@ define(['jquery', 'settings'], function($, settings) {
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
-            .fail(function(a, b, c) {
+            .fail(function (a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .done(function() {
+            .done(function () {
                 console.log('second success');
             })
-            .always(function() {
+            .always(function () {
                 console.log('complete');
             });
     }
@@ -71,12 +71,12 @@ define(['jquery', 'settings'], function($, settings) {
         }
     }
 
-    var indexButtonChange = function(event) { // the user  +  or  - event is added or substracted to the value
+    var indexButtonChange = function (event) { // the user  +  or  - event is added or substracted to the value
         var test = event.data.value + index;
         indexChange(test);
     };
 
-    var buttonChange = function() {
+    var buttonChange = function () {
         var test = $('#indexInput').val(); // the default value or the user filled input is taken
         indexChange(parseInt(test));
     };
@@ -86,9 +86,9 @@ define(['jquery', 'settings'], function($, settings) {
         size: 'client side index, see on the bottom of the list',
         renewablesList: [], //  its for the hard Test
         getRenewable: getRenewable, //  its for the hard Test
-        init: function() {
+        init: function () {
             console.log(renewables.color);
-            $('#elf-view').load('/renewables/renewables-page', function() {
+            $('#elf-view').load('/renewables/renewables-page', function () {
                 $('#display').html(renewables.color);
                 $('#display2').html(renewables.size);
                 $('#plusButton').click({

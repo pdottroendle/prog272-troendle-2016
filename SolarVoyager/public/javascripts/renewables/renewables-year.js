@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery'], function ($) {
     'use strict';
     var index = 2009;
     console.log('renewables.js');
@@ -6,7 +6,7 @@ define(['jquery'], function($) {
     function getRenewable() {
         console.log('getRenewable called');
 
-        $.getJSON('/renewables/ByYear/' + index, function(response) {
+        $.getJSON('/renewables/ByYear/' + index, function (response) {
                 console.log(response);
 
                 //ZZZZ.renewablesList = response.renewables; //  cc < ==== HERE
@@ -15,14 +15,14 @@ define(['jquery'], function($) {
 
                 $('#debug').html(JSON.stringify(response, null, 4));
             })
-            .fail(function(a, b, c) {
+            .fail(function (a, b, c) {
                 console.log('Error', a, b, c);
                 $('#debug').html('Error occured: ', a.status);
             })
-            .done(function() {
+            .done(function () {
                 console.log('second success');
             })
-            .always(function() {
+            .always(function () {
                 console.log('complete');
             });
     }
@@ -64,12 +64,12 @@ define(['jquery'], function($) {
         }
     }
 
-    var indexButtonChange = function(event) { // the user  +  or  - event is added or substracted to the value
+    var indexButtonChange = function (event) { // the user  +  or  - event is added or substracted to the value
         var test = event.data.value + index;
         indexChange(test);
     };
 
-    var buttonChange = function() {
+    var buttonChange = function () {
         var test = $('#indexInput').val(); // the default value or the user filled input is taken
         indexChange(parseInt(test));
     };
@@ -79,9 +79,9 @@ define(['jquery'], function($) {
         size: 'server side indexed (GET /:id )',
         renewablesList: [], //  cc < ==== HERE
         getRenewable: getRenewable, //  cc < ==== HERE
-        init: function() {
+        init: function () {
             console.log(ZZZZ.color);
-            $('#elf-view').load('/renewables/renewables-page', function() {
+            $('#elf-view').load('/renewables/renewables-page', function () {
                 $('#display').html(ZZZZ.color);
                 $('#display2').html(ZZZZ.size);
                 $('#plusButton').click({

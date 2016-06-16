@@ -1,8 +1,13 @@
 {
-    "preset": "google",
-    "validateIndentation": 4,
-    "validateQuoteMarks": "'",
-    "excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "**/data/**"],
-    "requireCamelCaseOrUpperCaseIdentifiers": false,
-    "maximumLineLength": 120,
+  "preset": "google",
+  "validateIndentation": 4,
+  "validateQuoteMarks": "'",
+  "excludeFiles": [
+    "**/node_modules/**",
+    "**/components/**",
+    "**/bower_components/**",
+    "**/data/**"
+  ],
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "maximumLineLength": 120,
 }

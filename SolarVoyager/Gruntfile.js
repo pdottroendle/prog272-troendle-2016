@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     'use strict';
 
     grunt.initConfig({
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         exec: {
 
             stripExtends: {
-                cmd: function() {
+                cmd: function () {
                     return 'sed "/extend/d" views/index.jade > views/fixture.jade';
                 }
             }

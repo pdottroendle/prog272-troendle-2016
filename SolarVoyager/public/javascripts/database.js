@@ -5,18 +5,18 @@ define(function () {
 
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function (result) {
-            $('#debug').html(JSON.stringify(result, null, 4));
-            $('#year').val(result.Year);
-            $('#solar').val(result['Solar (quadrillion Btu)']);
-            $('#geo').val(result['Geothermal (quadrillion Btu)']);
-            $('#biomass').val(result['Other biomass (quadrillion Btu)']);
-            $('#wind').val(result['Wind power (quadrillion Btu)']);
-            $('#liquid').val(result['Liquid biofuels (quadrillion Btu)']);
-            $('#wood').val(result['Wood biomass (quadrillion Btu)']);
-            $('#hydro').val(result['Hydropower (quadrillion Btu)']);
-            alert('success');
-            console.log(JSON.stringify(result, null, 4));
-        })
+                $('#debug').html(JSON.stringify(result, null, 4));
+                $('#year').val(result.Year);
+                $('#solar').val(result['Solar (quadrillion Btu)']);
+                $('#geo').val(result['Geothermal (quadrillion Btu)']);
+                $('#biomass').val(result['Other biomass (quadrillion Btu)']);
+                $('#wind').val(result['Wind power (quadrillion Btu)']);
+                $('#liquid').val(result['Liquid biofuels (quadrillion Btu)']);
+                $('#wood').val(result['Wood biomass (quadrillion Btu)']);
+                $('#hydro').val(result['Hydropower (quadrillion Btu)']);
+                alert('success');
+                console.log(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
@@ -30,8 +30,8 @@ define(function () {
 
     function getAll() {
         $.getJSON('/allRenewables/all-data', function (result) {
-            $('#debug').html(JSON.stringify(result, null, 4));
-        })
+                $('#debug').html(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
@@ -45,8 +45,8 @@ define(function () {
 
     function emptyCollection() {
         $.getJSON('/allRenewables/emptyCollection', function (result) {
-            $('#debug').html(JSON.stringify(result, null, 4));
-        })
+                $('#debug').html(JSON.stringify(result, null, 4));
+            })
             .done(function () {
                 console.log('second success');
             })
