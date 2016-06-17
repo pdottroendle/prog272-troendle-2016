@@ -42,30 +42,28 @@ var connect = {
         'use strict';
         connect.simpleConnect();
     },
-    
+
     doConnectionMlab: function(useSimple) {
         'use strict';
         connect.mlabConnect();
     }
 
-       
-        //var useSimple2 = useSimple;
-        //var nochange = (useSimple === useSimple2);
-        //if (!nochange) {
-        //    mongoose.connection.close(function(){
-        //        console.log('new database location');
-        //    });
-        //}
-        // seem to be issues of latencies or  it connects then too soon?
-
-        //var connectType = useSimple || true; // default Mlab and true is local
-        //if (!useSimple) {
-        //    console.log('client selection Mlab XXXXXXXXXXXXXXXXXXXXXXXXXXXX');}
-        //if (connectType) {
-        //    connect.simpleConnect();
-        //} else {
-        //    connect.mlabConnect();
-        //}
+    //var useSimple2 = useSimple;
+    //var nochange = (useSimple === useSimple2);
+    //if (!nochange) {
+    //    mongoose.connection.close(function(){
+    //        console.log('new database location');
+    //    });
+    //}
+    // seem to be issues of latencies or  it connects then too soon?
+    //var connectType = useSimple || true; // default Mlab and true is local
+    //if (!useSimple) {
+    //    console.log('client selection Mlab XXXXXXXXXXXXXXXXXXXXXXXXXXXX');}
+    //if (connectType) {
+    //    connect.simpleConnect();
+    //} else {
+    //    connect.mlabConnect();
+    //}
 };
 
 module.exports = connect;

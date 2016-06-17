@@ -38,17 +38,17 @@ router.post('/updateSettings', function(request, response) {
     console.log('request body', request.body);
 
     var useLocalMongoDb = request.body.dataSource.toLowerCase() === 'local mongodb';
-    console.log('update client selection ---->' , useLocalMongoDb);
+    console.log('update client selection ---->', useLocalMongoDb);
     if (!connect.connected) {
-        if (useLocalMongoDb) { 
+        if (useLocalMongoDb) {
             connect.doConnection();
             console.log('update client selection local MongoDb accepted');
-        }else { 
+        } else {
             connect.doConnectionMlab();
             console.log('update client selection Mlab accepted');
         }
     }
-    
+
     Settings.findOne({
         keyNote: 'settings'
     }, function(err, doc) {
@@ -75,12 +75,12 @@ router.get('/getSettings', function(request, response) {
     'use strict';
 
     var useLocalMongoDb = request.body.dataSource.toLowerCase() === 'local mongodb';
-    console.log('get client selection ---->' , useLocalMongoDb);
+    console.log('get client selection ---->', useLocalMongoDb);
     if (!connect.connected) {
         if (useLocalMongoDb) {
             connect.doConnection();
             console.log('client selection local MongoDb accepted');
-        }else {
+        } else {
             connect.doConnectionMlab();
             console.log('client selection Mlab accepted');
         }
