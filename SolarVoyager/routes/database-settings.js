@@ -4,7 +4,7 @@ var Settings = require('../models/settings');
 var connect = require('./connect');
 
 /* GET users listing. */
-router.get('/all-data', function(req, res, next) {
+router.get('/', function(req, res, next) {
     'use strict';
     res.send('respond with a resource');
 });
@@ -33,7 +33,7 @@ function saveSettings(request, response) {
     });
 }
 
-router.get('/updateSettings', function(request, response) {
+router.post('/updateSettings', function(request, response) {
     'use strict';
     console.log('request body', request.body);
     if (!connect.connected) {
@@ -81,7 +81,7 @@ router.get('/getSettings', function(request, response) {
         } else {
             if (doc === null) {
                 response.send({
-                    settings: { // undercase  its used in home.js line 7
+                    Settings: {
                         dataType: 'Database',
                         dataSource: 'Local MongoDb',
                         comment: 'Default Comment'
@@ -89,7 +89,7 @@ router.get('/getSettings', function(request, response) {
                 });
             } else {
                 response.send({
-                    settings: doc
+                    Settings: doc
                 });
             }
         }

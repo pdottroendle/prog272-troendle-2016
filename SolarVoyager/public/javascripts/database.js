@@ -19,7 +19,7 @@ define(['jquery', 'settings'], function($, settings) {
                 $('#liquid').val(result['Liquid biofuels (quadrillion Btu)']);
                 $('#wood').val(result['Wood biomass (quadrillion Btu)']);
                 $('#hydro').val(result['Hydropower (quadrillion Btu)']);
-                alert('success');
+                //alert('success');
                 console.log(JSON.stringify(result, null, 4));
                 routeType = settings.useDatabase ? 0 : 1;
                 console.log(routeType, ' --> is the insert routeType');
