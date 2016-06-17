@@ -1,15 +1,15 @@
-define(['jquery', 'settings'], function ($, settings) {
+define(['jquery', 'settings'], function($, settings) {
     'use strict';
     var routeType = settings.useDatabase ? 0 : 1;
-console.log(routeType, ' --> is the selected routeType');
+    console.log(routeType, ' --> is the selected routeType');
 
-//define(function () {
-//    'use strict';
+    //define(function () {
+    //    'use strict';
 
     var insertUrl = '/allRenewables/insertValidCollection';
 
     function insertCollection() {
-        var jqxhr = $.get(insertUrl, function (result) {
+        var jqxhr = $.get(insertUrl, function(result) {
                 $('#debug').html(JSON.stringify(result, null, 4));
                 $('#year').val(result.Year);
                 $('#solar').val(result['Solar (quadrillion Btu)']);
@@ -24,60 +24,60 @@ console.log(routeType, ' --> is the selected routeType');
                 routeType = settings.useDatabase ? 0 : 1;
                 console.log(routeType, ' --> is the insert routeType');
             })
-            .done(function () {
+            .done(function() {
                 console.log('second success');
             })
-            .fail(function () {
+            .fail(function() {
                 alert('error');
             })
-            .always(function () {
+            .always(function() {
                 console.log('finished');
             });
     }
 
     function getAll() {
-        $.getJSON('/allRenewables/all-data', function (result) {
+        $.getJSON('/allRenewables/all-data', function(result) {
                 $('#debug').html(JSON.stringify(result, null, 4));
                 routeType = settings.useDatabase ? 0 : 1;
                 console.log(routeType, ' --> is the getAll routeType');
             })
-            .done(function () {
+            .done(function() {
                 console.log('second success');
             })
-            .fail(function () {
+            .fail(function() {
                 alert('error');
             })
-            .always(function () {
+            .always(function() {
                 console.log('finished');
             });
     }
 
     function emptyCollection() {
-        $.getJSON('/allRenewables/emptyCollection', function (result) {
+        $.getJSON('/allRenewables/emptyCollection', function(result) {
                 $('#debug').html(JSON.stringify(result, null, 4));
                 routeType = settings.useDatabase ? 0 : 1;
                 console.log(routeType, ' --> is the empty routeType');
             })
-            .done(function () {
+            .done(function() {
                 console.log('second success');
             })
-            .fail(function () {
+            .fail(function() {
                 alert('error');
             })
-            .always(function () {
+            .always(function() {
                 console.log('finished');
             });
     }
 
     var database = {
-        init: function () {
-            $('#elf-view').load('/database', function () {
+        init: function() {
+            $('#elf-view').load('/database', function() {
 
                 $('#insertValidData').click(insertCollection);
                 $('#getAll').click(getAll);
                 $('#emptyCollection').click(emptyCollection);
 
-                $('#target').submit(function (event) {
+                $('#target').submit(function(event) {
                     event.preventDefault();
                     var userFormData = $(this).serialize();
                     $('#debug').html(userFormData);
@@ -92,8 +92,7 @@ console.log(routeType, ' --> is the selected routeType');
                         hydro: $('#hydro').val()
                     };
                     console.log(userFormData);
-                    $.get('/allRenewables/insertValidCollection', userData, function (result) {
-                    });
+                    $.get('/allRenewables/insertValidCollection', userData, function(result) {});
                 });
 
             });

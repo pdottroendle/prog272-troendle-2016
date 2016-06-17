@@ -4,14 +4,14 @@ var modelRenewables = require('../models/renewables');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {
         title: 'Week09-MongooseBasics'
     });
 });
 
-router.get('/all-data', function (request, response) {
+router.get('/all-data', function(request, response) {
     'use strict';
     console.log('AllData route invoked.');
     if (!connect.connected) {
@@ -19,7 +19,7 @@ router.get('/all-data', function (request, response) {
     }
 
     console.log('About to find renewables.');
-    modelRenewables.find({}, function (err, data) {
+    modelRenewables.find({}, function(err, data) {
         console.log(data.length);
         console.log(data[0]);
         var allData = data;
@@ -33,12 +33,12 @@ router.get('/all-data', function (request, response) {
     });
 });
 
-router.get('/emptyCollection', function (request, response) {
+router.get('/emptyCollection', function(request, response) {
     'use strict';
     if (!connect.connected) {
         connect.doConnection();
     }
-    modelRenewables.remove({}, function (err) {
+    modelRenewables.remove({}, function(err) {
         if (err) {
             response.send({
                 result: 'err',
@@ -52,12 +52,12 @@ router.get('/emptyCollection', function (request, response) {
     });
 });
 
-router.get('/insertValidCollection', function (request, response) {
+router.get('/insertValidCollection', function(request, response) {
     'use strict';
     allMongo.readDataAndInsert(response);
 });
 
-router.get('/:id', function (request, response) {
+router.get('/:id', function(request, response) {
     'use strict';
     response.render(request.params.id, {});
 });
