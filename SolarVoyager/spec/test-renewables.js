@@ -15,7 +15,7 @@ define(['jquery', 'renewables', 'clientRenewables'], function($, renewables, cli
             expect(renewables.init).toBeDefined();
         });
 
-        fit('expects getRenewable to be defined', function() {
+        it('expects getRenewable to be defined', function() {
             spyOn($, 'getJSON').and.callFake(function(url, success) {
                 success({
                     renewables: clientRenewables

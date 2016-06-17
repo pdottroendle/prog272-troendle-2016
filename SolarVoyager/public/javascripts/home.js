@@ -1,4 +1,5 @@
-define(['settings'], function(settings) {
+define(['jquery', 'settings'], function($, settings) {
+//define(['settings'], function(settings) {
     'use strict';
 
     function getSettings() {

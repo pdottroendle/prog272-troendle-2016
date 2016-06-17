@@ -21,6 +21,8 @@ require.config({
         jquery: 'public/components/jquery/jquery.min',
         control: 'public/javascripts/control',
         home: 'public/javascripts/home',
+        database: 'public/javascripts/database',
+        settings: 'public/javascripts/settings',
         renewables: 'public/javascripts/renewables/renewables',
         renewablesIndex: 'public/javascripts/renewables/renewables-index',
         renewablesYear: 'public/javascripts/renewables/renewables-year',
