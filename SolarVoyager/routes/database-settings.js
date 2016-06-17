@@ -36,10 +36,19 @@ function saveSettings(request, response) {
 router.post('/updateSettings', function(request, response) {
     'use strict';
     console.log('request body', request.body);
-    if (!connect.connected) {
-        connect.doConnection();
-    }
 
+    var useLocalMongoDb = request.body.dataSource.toLowerCase() === 'local mongodb';
+    console.log('update client selection ---->' , useLocalMongoDb);
+    if (!connect.connected) {
+        if (useLocalMongoDb) { 
+            connect.doConnection();
+            console.log('update client selection local MongoDb accepted');
+        }else { 
+            connect.doConnectionMlab();
+            console.log('update client selection Mlab accepted');
+        }
+    }
+    
     Settings.findOne({
         keyNote: 'settings'
     }, function(err, doc) {
@@ -64,9 +73,17 @@ router.post('/updateSettings', function(request, response) {
 
 router.get('/getSettings', function(request, response) {
     'use strict';
-    console.log('request body', request.body);
+
+    var useLocalMongoDb = request.body.dataSource.toLowerCase() === 'local mongodb';
+    console.log('get client selection ---->' , useLocalMongoDb);
     if (!connect.connected) {
-        connect.doConnection();
+        if (useLocalMongoDb) {
+            connect.doConnection();
+            console.log('client selection local MongoDb accepted');
+        }else {
+            connect.doConnectionMlab();
+            console.log('client selection Mlab accepted');
+        }
     }
 
     Settings.findOne({

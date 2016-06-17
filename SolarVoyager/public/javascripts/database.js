@@ -1,10 +1,5 @@
-define(['jquery', 'settings'], function($, settings) {
+define(function () {
     'use strict';
-    var routeType = settings.useDatabase ? 0 : 1;
-    console.log(routeType, ' --> is the selected routeType');
-
-    //define(function () {
-    //    'use strict';
 
     var insertUrl = '/allRenewables/insertValidCollection';
 
@@ -21,8 +16,6 @@ define(['jquery', 'settings'], function($, settings) {
                 $('#hydro').val(result['Hydropower (quadrillion Btu)']);
                 //alert('success');
                 console.log(JSON.stringify(result, null, 4));
-                routeType = settings.useDatabase ? 0 : 1;
-                console.log(routeType, ' --> is the insert routeType');
             })
             .done(function() {
                 console.log('second success');
@@ -38,8 +31,6 @@ define(['jquery', 'settings'], function($, settings) {
     function getAll() {
         $.getJSON('/allRenewables/all-data', function(result) {
                 $('#debug').html(JSON.stringify(result, null, 4));
-                routeType = settings.useDatabase ? 0 : 1;
-                console.log(routeType, ' --> is the getAll routeType');
             })
             .done(function() {
                 console.log('second success');
@@ -55,8 +46,6 @@ define(['jquery', 'settings'], function($, settings) {
     function emptyCollection() {
         $.getJSON('/allRenewables/emptyCollection', function(result) {
                 $('#debug').html(JSON.stringify(result, null, 4));
-                routeType = settings.useDatabase ? 0 : 1;
-                console.log(routeType, ' --> is the empty routeType');
             })
             .done(function() {
                 console.log('second success');

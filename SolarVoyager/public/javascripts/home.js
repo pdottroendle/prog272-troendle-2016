@@ -45,7 +45,7 @@ define(['settings'], function(settings) {
                 $('#elf-view').load('/home', function() {
                     $('#display').html(home.color);
                     $('#display2').html(home.size);
-                    getSettings();
+                    //getSettings();
                     $('#target').submit(function(event) {
                         event.preventDefault();
                         var userFormData = $(this).serialize();
@@ -56,7 +56,10 @@ define(['settings'], function(settings) {
                             comment: $('#comment').val()
                         };
                         settings.setSettings(userData);
+
+                        // taking the user data and passes it over to the server here?
                         $.post('/databaseSettings/updateSettings', userData, function(result) {
+                            getSettings();
                             console.log(settings);
                         });
                     });

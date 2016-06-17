@@ -6,8 +6,9 @@ define(['jquery', 'settings'], function($, settings) {
 
     var routeType = settings.useDatabase ? 0 : 1;
     var renewableRoutes = ['/allRenewables/all-data/', '/renewables/'];
-    console.log('the route type 1:renewables 0:allRenewables/all-data is ----> ', routeType);
+    console.log('1:renewables 0:allRenewables/all-data --> ', routeType);
     console.log('renewables.js');
+    console.log(routeType, ' 0 is the database and 1 is JSON ');
 
     function getRenewable() {
         console.log('getRenewable called');

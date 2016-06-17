@@ -52,7 +52,8 @@ note: the week 06 branch uses the Week05-ExpressRoutesSolar
 - [Week10-ExpressRoutesSolar Final][express-start-test0]
  [express-start-test0]:http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Final2016.html
 
-note:
+==============================================================================================
+notes:
 #! /bin/bash
 cd
 mkdir data
@@ -61,11 +62,11 @@ chmod a+x ~/mongod
 # mongod
 also create chmod 777 /data/db/ empty folders in the root
 
-note: this is what is used a lot:
+this is what is used a lot:
  define(function() {
  	return {};
  })
 
 
- note: tests will be updated!! 
+tests will be updated!! 
  cp -r ~/Git/JsObjects/Utilities/Templates/UnitTest/SolarVoyager/* .
