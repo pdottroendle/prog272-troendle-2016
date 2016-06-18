@@ -25,11 +25,15 @@ router.get('/all-data', function(request, response) {
         var allData = data;
 
         allMongo.writeData('renewables.json', allData);
-
+        response.send({
+            result: 'Success',
+            renewables: data
+        });
+        /*   CC correction
         response.send({
             result: 'Success',
             allData: data
-        });
+        }); */
     });
 });
 
